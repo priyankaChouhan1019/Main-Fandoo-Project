@@ -2,47 +2,59 @@
 import React, { Component } from 'react'
 import '../signup/Signup.css'
 import { TextField } from "@material-ui/core";
+import logo from '../signup/assets/googleLogo.png';
 
 
 export class Signup extends Component {
     render() {
         return (
-            <div class="main">
-                <div class="container">
-                    <div class="left-part"> 
-                        <p class="title">Google</p>
-                        <br></br>
-                        <p class="account">Create your google account</p>
-                        <br></br>
-                        <div class="name-box">
-                            <TextField id="outlined-basic" label="First Name" variant="outlined" />
-                            <br></br><br></br>
-                            <TextField id="outlined-basic" label="Last Name" variant="outlined" />
+            <div class="main-page">
+                <div class="main-container">
+                    <div class="left-part">
+                        <div class="google-title">
+                            {/* <p>Google</p> */}
+                            <p style={{ color: 'blue' }} >G</p>
+                            <p style={{ color: 'red' }}>o</p>
+                            <p style={{ color: 'yellow' }}>o</p>
+                            <p style={{ color: 'blue' }}>g</p>
+                            <p style={{ color: 'green' }}>l</p>
+                            <p style={{ color: 'red' }}>e</p>
                         </div>
-                        <br></br>
-                        <TextField id="outlined-basic" label="Gmail" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods" />
-                        
-                        <br></br>
-                        <br></br>
-                        <p class="use_current">use the current email address instead</p>
-                        <div class="password-box">
-                            <TextField id="outlined-basic" label="Password" type="password" variant="outlined" helperText="Use 8 or more characters with a mix of letters, numbers & symbols" />
-                            <TextField id="outlined-basic" label="Confirm" type="password" variant="outlined" />
+                        <div class="heading">
+                            <p>Create your Google Account</p>
+                        </div>
+                        <div class="name-row">
+                            <div class="first-name">  <TextField id="outlined-basic" label="First Name" variant="outlined" /></div>
+                            <div class="last-name"> <TextField id="outlined-basic" label="Last Name" variant="outlined" /></div>
+                        </div>
+                        <div class="user-row">
+                            <TextField id="outlined-basic" label="Your email address" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods" />
+                        </div>
+                        <div class="use_current">
+                            <p>use the current email address instead</p>
+                        </div>
+                        <div class="password-row">
+                            <div class="password">  <TextField id="outlined-basic" label="Password" variant="outlined" /></div>
+                            <div class="c-password"> <TextField id="outlined-basic" label="Confirm Password" variant="outlined" /></div>
                         </div>
                         <div class="checkbox">
                             <input class="check1" type="checkbox"></input>
                             <p class="showbox">Show Password</p>
                         </div>
-                        <div class="last-part">
-                            <p class="signin">Sign in Instead</p>
-                            <p class="blue-box">
-                                <button class="button1">Next</button>
-                            </p>
+                        <div className="last-section">
+                            <div class="sign-instead">
+                                <p>Sign in instead</p>
+                            </div>
+                            <div class="next-button">
+                                <button className="button1">Next</button>
+                            </div>
                         </div>
-                     </div> 
-                      <div class="right-part">
-                       
-                    </div>  
+                    </div>
+
+                    <div class="right-part">
+                        <img className="logo1" src={logo} alt="this is logo"></img>
+                        < p className="logo-text">One account. All of Google working for you.</p>
+                    </div>
                 </div>
             </div>
         )
