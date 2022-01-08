@@ -1,0 +1,104 @@
+.main{
+    margin: auto;
+    padding: 50px;
+    width: 50%;
+}
+
+.container{
+    width: 750px;
+    height: 600px;
+    padding: 25px;
+    display: flex;
+    /* background-color: lightgrey; */
+    justify-content: center;
+}
+
+.left-part{
+    width: 48%;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.right-part{
+    width: 48%;
+    justify-content: center;
+  
+}
+
+.title{
+    font-size: 23px;
+    color: red;
+    margin: 0vh 0vw 0vh -18vw;
+}
+
+.account{
+    font-size: 15px;
+    font-weight:500;
+    color: black;
+    margin: 0vh 0vw 0vh -10vw;
+}
+
+.name-box{
+    display: flex;
+    justify-content: center;
+    padding:5px;
+}
+
+.password-box{
+    /* display: flexbox; */
+    display: flex;
+    justify-content: center;
+}
+
+.check1{
+    margin: 2.5vh 1vw;
+}
+
+.checkbox{
+    display: flex;
+}
+
+.showbox{
+    font-size: 15px;
+}
+
+.signin{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    color: blue;
+    margin: 2.5vh 10vw 0vh -10vw;
+}
+
+.blue-box{
+    width: 10px;
+    height: 2px;
+}
+
+.button1{
+    font-size: 20px;
+    color: black;
+
+}
+
+.last-part{
+    display: flex;
+    justify-content: center;
+}
+
+.logo1{
+    width: 65%;
+    height: 50%;
+    margin: 10vh 6vw;
+}
+
+.logo-text{
+    font: 50px;
+    font-style: italic;
+    margin: -10vh 0vw 0vh 5vw;
+}
+.use_current{
+
+    font-size: 15px;
+    color: blue;
+    margin: 0vh 0vw 5vh -8vw;
+}
