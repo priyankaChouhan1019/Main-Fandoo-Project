@@ -1,0 +1,77 @@
+.main-page{
+    width: 100%;
+    margin: 15vh 0vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-container{
+    padding: 1.5vh;
+    width: 35%;
+    height: 90vh;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.first-content{
+    justify-content: center;
+}
+
+.google-title{
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+}
+
+.sign-in{
+    font-size: 25px;
+}
+
+.account{
+    /* background-color: black; */
+    font-size: 20px;
+    margin: -1vh 0vw 3vh 0vw;
+}
+
+.email-row{
+    font-size: 0px;
+    padding: 0px ;
+}
+
+.else-computer{
+}
+
+.text{
+    font-size: 15px;
+}
+
+.learnmore{
+    color: blue;
+}
+
+.create{
+    display: flex;
+    margin: 0vh 2vw;
+    margin-top: 30px;
+}
+
+.c-text{
+    color: blue;
+    /* align-items: center; */
+    /* justify-content: center; */
+    font-size: 15px;
+}
+
+
+.c-next{
+    color: whitesmoke;
+    /* align-items: center; */
+    /* justify-content: center; */
+    margin: 0vh 0vw;
+    background-color: blue;
+}
+
+.last-section{
+    margin: 2vh 0vw 0vh 10vw;
+}
