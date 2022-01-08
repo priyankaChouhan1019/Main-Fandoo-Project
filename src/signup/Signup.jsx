@@ -12,7 +12,13 @@ export class Signup extends Component {
                 <div class="main-container">
                     <div class="left-part">
                         <div class="google-title">
-                            <p>Google</p>
+                            {/* <p>Google</p> */}
+                            <p style={{ color: 'blue' }} >G</p>
+                            <p style={{ color: 'red' }}>o</p>
+                            <p style={{ color: 'yellow' }}>o</p>
+                            <p style={{ color: 'blue' }}>g</p>
+                            <p style={{ color: 'green' }}>l</p>
+                            <p style={{ color: 'red' }}>e</p>
                         </div>
                         <div class="heading">
                             <p>Create your Google Account</p>
@@ -40,8 +46,8 @@ export class Signup extends Component {
                                 <p>Sign in instead</p>
                             </div>
                             <div class="next-button">
-                            <button className="button1">Next</button>
-                            </div>              
+                                <button className="button1">Next</button>
+                            </div>
                         </div>
                     </div>
 
