@@ -13,6 +13,13 @@ export class Signup extends Component {
                        <div class="google-title">
                            <p>Google</p>
                        </div>
+                       <div class ="heading">
+                           <p>Create your Google Account</p>
+                       </div>
+                       <div class="name-row">
+                           <div>  <TextField id="outlined-basic" label="First Name" variant="outlined" /></div>
+                           <div> <TextField id="outlined-basic" label="Last Name" variant="outlined" /></div>
+                       </div>
                    </div>
                    <div class="right-part"></div>
                </div>
