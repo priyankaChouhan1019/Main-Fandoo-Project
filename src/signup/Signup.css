@@ -43,14 +43,17 @@
     justify-content: space-between;
     height: auto;
     margin-bottom: 20px;
+
 }
 
 .first-Name{
     width: 50%;
+    
 }
 
 .last-Name{
     width: 50%;
+    
 }
 
 
@@ -125,4 +128,9 @@
     font-size: 20px;
     color: black;
     background-color: lightblue;
+}
+@media only screen and (max-width:700px) {
+    .first-Name{
+        width:100%;
+    }
 }

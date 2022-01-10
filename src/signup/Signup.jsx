@@ -2,13 +2,14 @@
 import React, { Component } from 'react'
 import '../signup/Signup.css'
 import { TextField } from "@material-ui/core";
-import logo from '../signup/assets/googleLogo.png';
-
-
+import logo from '../signup/assets/googleLogo.png'; 
 export class Signup extends Component {
     render() {
+       
         return (
+
             <div class="main-page">
+                
                 <div class="main-container">
                     <div class="left-part">
                         <div class="google-title">
