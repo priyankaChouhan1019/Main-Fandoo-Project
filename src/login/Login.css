@@ -1,77 +1,119 @@
 .main-page{
     width: 100%;
     margin: 15vh 0vw;
-    display: flex;
-    align-items: center;
+    /* display: flex; */
+    /* align-items: center; */
     justify-content: center;
 }
 
 .page-container{
     padding: 1.5vh;
-    width: 35%;
-    height: 90vh;
-    border: 1px solid black;
-    background-color: white;
+    width: 30%;
+     height: 80vh; 
+     padding: 20px 40px 20px 40px; 
+     border: 1px solid lightgray;
+     border-radius: 5px;
+     margin-top: 100px;
 }
-
+/* 
 .first-content{
     justify-content: center;
-}
+    font-weight:bold;
+    font-size:20px; 
+    margin-top: 10px;
+} */
 
-.google-title{
+.login-title{
     display: flex;
     font-size: 25px;
     justify-content: center;
-}
+    margin-bottom: 10px;
+    
+} 
 
 .sign-in{
-    font-size: 25px;
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3333;
+    margin : -1vh 0vw 3vh 0vw;
 }
 
 .account{
     /* background-color: black; */
-    font-size: 20px;
-    margin: -1vh 0vw 3vh 0vw;
+    margin: -1vh 0vw 8vh 0vw;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+    color: #202124;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
 }
 
 .email-row{
     font-size: 0px;
     padding: 0px ;
 }
+#forgotEmail{
+    /* padding-bottom: 3px;
+    padding-top: 9px; */
+    font-size: 14px;
+    color: #1a73e8;
+    text-align: left;
+    cursor: pointer;
+    /* display: inline-block; */
+    font-weight: 500;
+    margin: -2vh 0vw 0vh 0vw;
+}
 
-.else-computer{
+#forgotPassword{
+    font-size: 14px;
+    color: #1a73e8;
+    text-align: left;
+    cursor: pointer;
+    margin: -2vh 0vw 0vh 0vw;
+    /* display: inline-block; */
+    font-weight: 500;
 }
 
 .text{
+    margin: 5vh 0vw 3vh 0vw;
     font-size: 15px;
+    display: flex;
 }
 
 .learnmore{
-    color: blue;
+    color: #1a73e8;
+    display: flex;
+    margin-top: -10px;
 }
 
 .create{
     display: flex;
-    margin: 0vh 2vw;
-    margin-top: 30px;
+    /* margin: 0vh 2vw;
+    margin-top: 30px; */
+    justify-content: space-between;
+    width: 100%;
 }
 
-.c-text{
-    color: blue;
+.l-text{
+    color:#1a73e8;
     /* align-items: center; */
     /* justify-content: center; */
     font-size: 15px;
 }
 
 
-.c-next{
+ .l-next{
     color: whitesmoke;
     /* align-items: center; */
     /* justify-content: center; */
-    margin: 0vh 0vw;
-    background-color: blue;
-}
+     margin: 0vh 2vw; 
+    background-color: #1a73e8;
+    padding: 10px;
+    border: none;
+} 
 
 .last-section{
-    margin: 2vh 0vw 0vh 10vw;
+       /* margin: 2vh 0vw 0vh 10vw;    */
+       direction: rtl; 
 }

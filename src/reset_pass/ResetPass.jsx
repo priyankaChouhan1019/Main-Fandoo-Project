@@ -16,8 +16,8 @@ export class ResetPass extends Component {
       validation =()=>{
           let isError= false;
           const error = this.state;
-          error.firstNameError = this.state.password === ''? true : false;
-          error.lastNameError= this.state.confirm_password === '' ? true : false;
+          error.passwordError = this.state.password === ''? true : false;
+          error.confirm_passError = this.state.confirm_password === '' ? true : false;
     
           this.setState({
               ...error
@@ -61,13 +61,13 @@ export class ResetPass extends Component {
             <div className="password-text">
             <TextField name="password" id="outlined-basic" label="Password" variant="outlined" fullWidth
              error={this.state.passwordError}
-             helperText={this.state.passwordError ? "password required" : " "}
+             helperText={this.state.passwordError ? "email or password required" : " "}
              onChange={(e) => this.changeHandle(e)}/>
-            </div>
+             </div>
             <div className="confirm-password">
-            <TextField  name="confirm-password" id="outlined-basic" label="Confirm Password" variant="outlined" fullWidth 
-             error={this.state.lastNameError}
-             helperText={this.state.lastNameError ? "confirm password" : " "}
+            <TextField  name="confirm_password" type ="password" id="outlined-basic" label="Confirm Password" variant="outlined" fullWidth 
+             error={this.state.confirm_passError}
+             helperText={this.state.confirm_passError ? "password required" : " "}
              onChange={(e) => this.changeHandle(e)}/>
             </div>
             <button className="next-button" onClick={this.next}>Next</button>

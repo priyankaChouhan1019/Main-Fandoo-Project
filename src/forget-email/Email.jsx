@@ -24,7 +24,7 @@ export class Email extends Component {
                         <p >Enter your phone number or recovery email</p>
                     </div>
 
-                    <div className="text">
+                    <div className="email-text">
                         <TextField id="outlined-basic" label="Outlined" variant="outlined" />
                     </div>
                     <div class="email_button">
