@@ -29,7 +29,7 @@ export class Signup extends Component {
                             <div class="last-name"> <TextField id="outlined-basic" label="Last Name" variant="outlined" /></div>
                         </div>
                         <div class="user-row">
-                            <TextField id="outlined-basic" label="Your email address" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods" />
+                            <TextField id="outlined-basic" label="user name" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods" />
                         </div>
                         <div class="use_current">
                             <p>use the current email address instead</p>

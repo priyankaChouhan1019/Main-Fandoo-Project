@@ -1,78 +1,60 @@
 .main-page{
     width: 100%;
-    margin: 5vh 0vw;
+    height: 100%;
+   margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #fff;
+    color: #202124;
+    
 }
 
-.page-container{
-    /* padding: 1.5vh; */
-    width: 35%;
-    height: 90vh;
-    border: 1px solid black;
-    background-color: white;
+.container-main{
+    width: 30%;
+    height: 70vh;
+    border: 1px solid rgb(207, 203, 203);
+    border-radius: 8px;
+    justify-content: center;    
+    align-items: center;
 }
-
-.first-content{
-    justify-content: center;
-    margin-left:20px ;
-}
-
 .google-title{
-    /* display: flex; */
-    font-size: 30px;
-    justify-content: center;
-}
-
-.sign-in{
-    font-size: 25px;
-}
-
-.account{
-    /* background-color: black; */
-    font-size: 20px;
-    margin: -1vh 0vw 3vh 0vw;
-}
-
-/* .email-row{
-    font-size: 0px;
-    padding: 0px ;
-} */
-
-.else-computer{
-}
-
-.text{
-    font-size: 15px;
-}
-
-.learnmore{
-    color: blue;
-}
-
-.create{
     display: flex;
-    margin: 0vh 2vw;
-    margin-top: 30px;
+    font-size: 25px;
+    margin-left: 40px; 
+}
+.email-heading{
+    margin-top: 20px;
+    color: #202124; 
+    font-size: 24px;
+     font-weight: 400; 
+    font-family: Arial, sans-serif;
+    /* font-weight: bold; */
 }
 
-.c-text{
-    color: blue;
-    /* align-items: center; */
-    /* justify-content: center; */
-    font-size: 15px;
+.first-part{
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.password-para{
+    margin-bottom: 50px; 
+    color: #202124;
+    font-size: 16px;
+    /* font-weight: 400; */
+    letter-spacing: 0.1px;
+     margin-top: -20px; 
+   
+}
+
+.text{     
+         /* display: flex;   */
+        justify-content: center;
+        font-size: 22px;
+        width: 100%;
+         margin-top: 40px; 
+         margin-bottom: 20px; 
+    
 }
 
 
-.c-next{
-    color: whitesmoke;
-    /* align-items: center; */
-    /* justify-content: center; */
-    margin: 0vh 0vw;
-    background-color: blue;
-}
 
-.last-section{
-    margin: 2vh 0vw 0vh 10vw;
-}
