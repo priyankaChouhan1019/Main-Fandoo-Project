@@ -2,43 +2,43 @@ import React, { Component } from 'react'
 import '../reset_pass/ResetPass.scss'
 import { TextField } from "@material-ui/core";
 export class ResetPass extends Component {
-    // constructor(props) {
-    //     super(props);
+    constructor(props) {
+        super(props);
     
-    //     this.state = {
-    //       password: "",
-    //       confirm_password: "",
-    //       passwordError: false,
-    //       confirm_passError:false
-    //     };
-    //   }
+        this.state = {
+          password: "",
+          confirm_password: "",
+          passwordError: false,
+          confirm_passError:false
+        };
+      }
     
-    //   validation =()=>{
-    //       let isError= false;
-    //       const error = this.state;
-    //       error.firstNameError = this.state.password === ''? true : false;
-    //       error.lastNameError= this.state.confirm_password === '' ? true : false;
+      validation =()=>{
+          let isError= false;
+          const error = this.state;
+          error.firstNameError = this.state.password === ''? true : false;
+          error.lastNameError= this.state.confirm_password === '' ? true : false;
     
-    //       this.setState({
-    //           ...error
-    //       })
+          this.setState({
+              ...error
+          })
           
-    //       return isError = error.passwordError || error.confirm_passError ;
+          return isError = error.passwordError || error.confirm_passError ;
     
-    //   }
+      }
     
-    //   next=()=>{
-    //       var validated  = this.validation();
-    //       if(validated){
-    //           console.log("validation done successfullyyyy")
-    //       }
-    //   }
+      next=()=>{
+          var validated  = this.validation();
+          if(validated){
+              console.log("validation done successfullyyyy")
+          }
+      }
     
-    //   changeHandle = (e) => {
-    //     this.setState({
-    //       [e.target.name]: e.target.value,
-    //     });
-    //   };
+      changeHandle = (e) => {
+        this.setState({
+          [e.target.name]: e.target.value,
+        });
+      };
 
   render() {
     return (
