@@ -1,9 +1,4 @@
 
-
-import {
-  BrowserRouter, Route, Switch
-} from 'react-router-dom';
-
 import logo from './logo.svg';
 import './App.css';
  import Signup from './signup/Signup'
@@ -13,21 +8,13 @@ import ResetPass from './reset_pass/ResetPass';
 
 function App() {
   return (
-    <BrowserRouter>
+  
         <div className="App">
           <Signup />
           {/* <Login /> */}
           {/* <Email /> */}
           {/* <ResetPass /> */}
         </div>
-       {/* <Switch>
- 
-        <Route path='/' component={Signup} exact/>
-        <Route path='/login' component={Login} />
-        <Route path='/forget-email' component={Email} />
-        <Route path='/reset_pass' component={ResetPass} />
-      </Switch> */}
-    </BrowserRouter> 
   );
 }
 

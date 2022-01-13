@@ -6,6 +6,7 @@ import logo from '../signup/assets/googleLogo.png';
 import { Link } from "react-router-dom";
 export class Signup extends Component {
     
+   
     constructor(props) {
         super(props);
 
@@ -23,13 +24,6 @@ export class Signup extends Component {
         };
     }
 
-    checkValues = (e) => {
-        console.log(e.target.value)
-        this.setState({
-            [e.target.name]: e.target.value,
-        });
-    };
-
     validation = () => {
         let isError = false;
         const error = this.state;
@@ -43,11 +37,10 @@ export class Signup extends Component {
             ...error
         })
 
-        return isError = error.passwordError || error.confirm_passwordError || error.firstNameError || error.lastNameError || error.userNameError;
+        return isError = error.firstNameError || error.lastNameError || error.userNameError || error.passwordError || error.confirm_passwordError;
 
     }
 
-    
     next = () => {
         var validated = this.validation();
         if (validated) {
@@ -55,16 +48,23 @@ export class Signup extends Component {
         }
     }
 
+    changeHandle = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value,
+        });
+    };
+
+
    
     render() {
 
         return (
 
-            <div class="main-page">
+            <div className="main-page">
 
-                <div class="main-container">
-                    <div class="left-part">
-                        <div class="fandoo">
+                <div className="main-container">
+                    <div className="left-part">
+                        <div className="fandoo">
                             <p style={{ color: 'blue' }} >F</p>
                             <p style={{ color: 'red' }}>a</p>
                             <p style={{ color: 'yellow' }}>n</p>
@@ -72,30 +72,30 @@ export class Signup extends Component {
                             <p style={{ color: 'green' }}>o</p>
                             <p style={{ color: 'red' }}>o</p>
                         </div>
-                        <div class="heading">
+                        <div className="heading">
                             <p>Create your Google Account</p>
                         </div>
-                         <div class="name-row">
-                            <div class="first-name1">
+                         <div className="name-row">
+                            <div className="first-names">
                                 <TextField name=" firstName" id="outlined-basic" label="First Name" variant="outlined"
                                     error={this.state.firstNameError}
                                     helperText={this.state.firstNameError ? "first name required" : " "}
-                                    onChange={e => this.checkValues(e)}
+                                    onChange={(e) => this.changeHandle(e)}
                                 />
                             </div> 
-                            <div class="last-name1">
-                                <TextField name = "lastName" id="outlined-basic" label="Last Name" variant="outlined"
-                                error={this.state.lastNameError}
-                                helperText={this.state.lastNameError ? "last name required" : " "}
-                                onChange={e => this.checkValues(e)}
+                            <div className="last-names">
+                                <TextField name ="lastName" id="outlined-basic" label="Last Name" variant="outlined"
+                              error={this.state.lastNameError}
+                              helperText={this.state.lastNameError ? "last name required" : " "}
+                              onChange={(e) => this.changeHandle(e)}
                                 />
                             </div>
                         </div>
                         <div className="user-row">
                             <TextField name ="userName" id="outlined-basic" label="user name" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods" 
-                            error={this.state.userNameError}
-                            helperText={this.state.userNameError ? "last name required" : " "}
-                            onChange={e => this.checkValues(e)}
+                          error={this.state.userNameError}
+                          helperText={this.state.userNameError ? "user name required" : " "}
+                          onChange={(e) => this.changeHandle(e)}
                             />
                         </div>
                         <div className="use_current">
@@ -104,15 +104,15 @@ export class Signup extends Component {
                         <div class="password-row">
                             <div className="password"> 
                              <TextField name=" password" id="outlined-basic" label="Password" variant="outlined"
-                            error={this.state. passwordError}
-                            helperText={this.state. passwordError ? "last name required" : " "}
-                            onChange={e => this.checkValues(e)}
+                            error={this.state.passwordError}
+                            helperText={this.state.passwordError ? "password required" : " "}
+                            onChange={(e) => this.changeHandle(e)}
                             /></div>
                             <div className="c-password">
                                  <TextField name="confirm_password" id="outlined-basic" label="Confirm Password" variant="outlined"
                             error={this.state.confirm_passwordError}
-                            helperText={this.state.confirm_passwordError ? "last name required" : " "}
-                            onChange={e => this.checkValues(e)}
+                            helperText={this.state.confirm_passwordError ? "confirm password" : " "}
+                            onChange={(e) => this.changeHandle(e)}
                             /></div>
                         </div>
                         <div className="password_discription">
