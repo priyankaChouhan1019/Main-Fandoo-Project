@@ -124,8 +124,8 @@ export class Signup extends Component {
                         </div>
                         <div className="lastSection">
                             <div class="sign-instead">
-                            {/* <Link to="/login"> </Link> */}
-                            <p>Sign in instead</p>
+                            <Link to="/login">  
+                            <p>Sign in instead</p></Link>
                             </div>
                             <div class="sign-button">
                                 <button className="sign_button" onClick={this.next}  > Next </button>
