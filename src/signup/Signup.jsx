@@ -5,20 +5,20 @@ import { TextField } from "@material-ui/core";
 import logo from '../signup/assets/googleLogo.png';
 import { Link } from "react-router-dom";
 export class Signup extends Component {
-    
-   
+
+
     constructor(props) {
         super(props);
 
         this.state = {
             firstName: "",
             lastName: "",
-            userName:"",
+            userName: "",
             password: "",
             confirm_password: "",
             firstNameError: false,
             lastNameError: false,
-            userNameError:false,
+            userNameError: false,
             passwordError: false,
             confirm_passwordError: false
         };
@@ -55,7 +55,7 @@ export class Signup extends Component {
     };
 
 
-   
+
     render() {
 
         return (
@@ -75,45 +75,45 @@ export class Signup extends Component {
                         <div className="heading">
                             <p>Create your Google Account</p>
                         </div>
-                         <div className="name-row">
+                        <div className="name-row">
                             <div className="first-names">
-                                <TextField name=" firstName" id="outlined-basic" label="First Name" variant="outlined"
+                                <TextField name="firstName" id="outlined-basic" label="First Name" variant="outlined"
                                     error={this.state.firstNameError}
                                     helperText={this.state.firstNameError ? "first name required" : " "}
                                     onChange={(e) => this.changeHandle(e)}
                                 />
-                            </div> 
+                            </div>
                             <div className="last-names">
-                                <TextField name ="lastName" id="outlined-basic" label="Last Name" variant="outlined"
-                              error={this.state.lastNameError}
-                              helperText={this.state.lastNameError ? "last name required" : " "}
-                              onChange={(e) => this.changeHandle(e)}
+                                <TextField name="lastName" id="outlined-basic" label="Last Name" variant="outlined"
+                                    error={this.state.lastNameError}
+                                    helperText={this.state.lastNameError ? "last name required" : " "}
+                                    onChange={(e) => this.changeHandle(e)}
                                 />
                             </div>
                         </div>
                         <div className="user-row">
-                            <TextField name ="userName" id="outlined-basic" label="user name" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods" 
-                          error={this.state.userNameError}
-                          helperText={this.state.userNameError ? "user name required" : " "}
-                          onChange={(e) => this.changeHandle(e)}
+                            <TextField name="userName" id="outlined-basic" label="user name" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods"
+                                error={this.state.userNameError}
+                                helperText={this.state.userNameError ? "user name required" : " "}
+                                onChange={(e) => this.changeHandle(e)}
                             />
                         </div>
                         <div className="use_current">
                             <p>use the current email address instead</p>
                         </div>
                         <div class="password-row">
-                            <div className="password"> 
-                             <TextField name=" password" id="outlined-basic" label="Password" variant="outlined"
-                            error={this.state.passwordError}
-                            helperText={this.state.passwordError ? "password required" : " "}
-                            onChange={(e) => this.changeHandle(e)}
-                            /></div>
+                            <div className="password">
+                                <TextField name="password" id="outlined-basic" label="Password" variant="outlined"
+                                    error={this.state.passwordError}
+                                    helperText={this.state.passwordError ? "password required" : " "}
+                                    onChange={(e) => this.changeHandle(e)}
+                                /></div>
                             <div className="c-password">
-                                 <TextField name="confirm_password" id="outlined-basic" label="Confirm Password" variant="outlined"
-                            error={this.state.confirm_passwordError}
-                            helperText={this.state.confirm_passwordError ? "confirm password" : " "}
-                            onChange={(e) => this.changeHandle(e)}
-                            /></div>
+                                <TextField name="confirm_password" id="outlined-basic" label="Confirm Password" variant="outlined"
+                                    error={this.state.confirm_passwordError}
+                                    helperText={this.state.confirm_passwordError ? "confirm password" : " "}
+                                    onChange={(e) => this.changeHandle(e)}
+                                /></div>
                         </div>
                         <div className="password_discription">
                             <p>Use 8 or more characters with a mix of letters, numbers & symbols</p>
@@ -124,22 +124,22 @@ export class Signup extends Component {
                         </div>
                         <div className="lastSection">
                             <div class="sign-instead">
-                            <Link to="/login">  
-                            <p>Sign in instead</p></Link>
+                                <Link to="/login">
+                                     <p>Sign in instead</p> </Link>
                             </div>
                             <div class="sign-button">
                                 <button className="sign_button" onClick={this.next}  > Next </button>
-                                
-                            
-                        </div> 
-                    </div>
+
+
+                            </div>
+                        </div>
                     </div>
 
-                <div class="right-part">
-                    <img className="logo1" src={logo} alt="this is logo"></img>
-                    < p className="logo-text">One account. All of Google working for you.</p>
+                    <div class="right-part">
+                        <img className="logo1" src={logo} alt="this is logo"></img>
+                        < p className="logo-text">One account. All of Google working for you.</p>
+                    </div>
                 </div>
-            </div>
             </div >
         )
     }

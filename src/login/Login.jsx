@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../login/Login.css'
 import { TextField } from "@material-ui/core";
+import { Link } from 'react-router-dom';
 
 export class Login extends Component {
     constructor(props) {
@@ -78,7 +79,7 @@ export class Login extends Component {
                     </div>
                     <div className="create">
                         <div className="l-text">
-                            <p  >Create account ?</p>
+                        <Link to="/"> <p  >Create account ?</p></Link>
                         </div>
 
                         <div className="last-section">
