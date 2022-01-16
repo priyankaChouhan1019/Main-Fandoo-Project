@@ -2,30 +2,33 @@ import React, { Component } from 'react'
 import '../login/Login.css'
 import { TextField } from "@material-ui/core";
 import { Link } from 'react-router-dom';
+import UserService from '../../service/userservice';
+
+const service = new UserService();
 
 export class Login extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            login_email: "",
-            login_password: "",
-            login_emailError: false,
-            login_passwordError: false
+            email: "",
+            password: "",
+            emailError: false,
+            passwordError: false
         };
     }
 
     validation = () => {
         let isError = false;
         const error = this.state;
-        error.login_emailError = this.state.login_email === '' ? true : false;
-        error.login_passwordError = this.state.login_password === '' ? true : false;
+        error.emailError = this.state.email === '' ? true : false;
+        error.passwordError = this.state.password === '' ? true : false;
 
         this.setState({
             ...error
         })
 
-        return isError = error.login_emailError || error.login_passwordError;
+        return isError = error.emailError || error.passwordError;
 
     }
 
@@ -33,8 +36,22 @@ export class Login extends Component {
         var validated = this.validation();
         if (validated) {
             console.log("validation done successfullyyyy")
+            let data = {
+                "email" : "rathore@gmail.com",
+                "password" : "1235",
+          };
+
+          service.signin(data)
+          .then(res =>{
+              console.log(res)
+          })
+          .catch(err =>{
+              console.log(err)
+          })
         }
-    }
+        }
+        
+    
 
     changeHandle = (e) => {
         this.setState({
@@ -59,16 +76,16 @@ export class Login extends Component {
                         < p className="account">Use your Fundoo Account</p>
                     </div>
                     <div className="email-row">
-                        <TextField name="login_email" id="outlined-basic" label="Email or phone" variant="outlined" fullWidth
-                            error={this.state.login_emailError}
-                            helperText={this.state.login_emailError ? "email or phone required" : " "}
+                        <TextField name="email" id="outlined-basic" label="Email or phone" variant="outlined" fullWidth
+                            error={this.state.emailError}
+                            helperText={this.state.emailError ? "email or phone required" : " "}
                             onChange={(e) => this.changeHandle(e)} />
                     </div>
                     <p id="forgotEmail"> Forgot email ?</p>
                     <div className="password-row">
-                        <TextField name="login_password" id="outlined-basic" label="Password" variant="outlined" fullWidth
-                            error={this.state.login_passwordError}
-                            helperText={this.state.login_passwordError ? " password required" : " "}
+                        <TextField name="password" id="outlined-basic" label="Password" variant="outlined" fullWidth
+                            error={this.state.passwordError}
+                            helperText={this.state.passwordError ? " password required" : " "}
                             onChange={(e) => this.changeHandle(e)} />
                     </div>
                     <p id="forgotPassword"> Forgot password ?</p>

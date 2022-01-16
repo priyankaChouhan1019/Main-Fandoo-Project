@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import '../forget-email/Email.css'
+import { Link } from 'react-router-dom';
 import { TextField ,Button} from "@material-ui/core";
+
+import UserService from '../../service/userservice';
+
+const service = new UserService();
 
 export class Email extends Component {
 
@@ -30,6 +35,19 @@ export class Email extends Component {
         var validated = this.validation();
         if (validated) {
             console.log("validation done successfullyyyy")
+
+            let data = {
+                "email": "testingpm@gmail.com"
+              
+          };
+
+          service.email(data)
+          .then(res =>{
+              console.log(res)
+          })
+          .catch(err =>{
+              console.log(err)
+          })
         }
     }
 
@@ -68,8 +86,9 @@ export class Email extends Component {
                          onChange={(e) => this.changeHandle(e)}/>
                     </div>
                     <div class="email_button">
-                      <Button variant="contained" onClick={this.next}>Next</Button>  
-                     {/* <button className="Emailnext-button" onClick={this.next}>Next</button> */}
+                    <Link to="/reset_pass">
+                      <Button variant="contained" onClick={this.next}>Next</Button>  </Link>
+                     {/* <button className="email-button" onClick={this.next}>Next</button> */}
                     </div>
                 </div>
             </div>

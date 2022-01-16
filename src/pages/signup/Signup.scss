@@ -49,8 +49,9 @@
     justify-content: space-between;
     height: auto;
      margin-top: -55px;
-    
+   
 }
+
 
 .first-Names{
     width: 48%;
@@ -61,6 +62,7 @@
 .last-Names{
     width: 48%;
 }
+
 
 
 .user-row{
@@ -163,7 +165,13 @@
 }
 
 @media only screen and (max-width:700px) {
-    .first-Name{
-        width:100%;
+    // .first-Name{
+    //     width:100%;
+    // }
+    // .last-Name{
+    //     width: 100%;
+    // }
+    .name-row{
+        display: block;
     }
 }

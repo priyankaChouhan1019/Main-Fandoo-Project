@@ -1,11 +1,16 @@
 
 import React, { Component } from 'react'
+// import '../pages/signup/Signup.scss'
 import '../signup/Signup.scss'
-import { TextField } from "@material-ui/core";
 import logo from '../signup/assets/googleLogo.png';
+//import '../signup/Signup.jsx'
+import { TextField } from "@material-ui/core";
 import { Link } from "react-router-dom";
-export class Signup extends Component {
+import UserService from '../../service/userservice';
 
+const service = new UserService();
+
+export class Signup extends Component {
 
     constructor(props) {
         super(props);
@@ -13,12 +18,12 @@ export class Signup extends Component {
         this.state = {
             firstName: "",
             lastName: "",
-            userName: "",
+            email: "",
             password: "",
             confirm_password: "",
             firstNameError: false,
             lastNameError: false,
-            userNameError: false,
+            emailError: false,
             passwordError: false,
             confirm_passwordError: false
         };
@@ -29,7 +34,7 @@ export class Signup extends Component {
         const error = this.state;
         error.firstNameError = this.state.firstName === '' ? true : false;
         error.lastNameError = this.state.lastName === '' ? true : false;
-        error.userNameError = this.state.userName === '' ? true : false;
+        error.emailError = this.state.email === '' ? true : false;
         error.passwordError = this.state.password === '' ? true : false;
         error.confirm_passwordError = this.state.confirm_password === '' ? true : false;
 
@@ -37,7 +42,7 @@ export class Signup extends Component {
             ...error
         })
 
-        return isError = error.firstNameError || error.lastNameError || error.userNameError || error.passwordError || error.confirm_passwordError;
+        return isError = error.firstNameError || error.lastNameError || error.emailError || error.passwordError || error.confirm_passwordError;
 
     }
 
@@ -45,6 +50,23 @@ export class Signup extends Component {
         var validated = this.validation();
         if (validated) {
             console.log("validation done successfullyyyy")
+
+
+            let data = {
+                "firstName": " shan",
+                "lastName": "rathore",
+                "email": "rathor@gmail.com",
+                "password": "125",
+                "service": "advance"
+            };
+
+            service.registration(data)
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
         }
     }
 
@@ -92,9 +114,9 @@ export class Signup extends Component {
                             </div>
                         </div>
                         <div className="user-row">
-                            <TextField name="userName" id="outlined-basic" label="user name" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods"
-                                error={this.state.userNameError}
-                                helperText={this.state.userNameError ? "user name required" : " "}
+                            <TextField name="email" id="outlined-basic" label="user name" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods"
+                                error={this.state.emailError}
+                                helperText={this.state.emailError ? "user name required" : " "}
                                 onChange={(e) => this.changeHandle(e)}
                             />
                         </div>
@@ -108,6 +130,7 @@ export class Signup extends Component {
                                     helperText={this.state.passwordError ? "password required" : " "}
                                     onChange={(e) => this.changeHandle(e)}
                                 /></div>
+
                             <div className="c-password">
                                 <TextField name="confirm_password" id="outlined-basic" label="Confirm Password" variant="outlined"
                                     error={this.state.confirm_passwordError}
@@ -125,7 +148,7 @@ export class Signup extends Component {
                         <div className="lastSection">
                             <div class="sign-instead">
                                 <Link to="/login">
-                                     <p>Sign in instead</p> </Link>
+                                    <p>Sign in instead</p> </Link>
                             </div>
                             <div class="sign-button">
                                 <button className="sign_button" onClick={this.next}  > Next </button>

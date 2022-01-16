@@ -1,9 +1,8 @@
-@import '../variables/Variables.scss';
 
 @mixin buttonstyle {
     margin: -2vh 0vw 0vh 20vw ;
     color: white;
-    background-color: $button_color;
+    background-color: rgb(9, 123, 194);
     border: none;
     font-size: 20px;
 }

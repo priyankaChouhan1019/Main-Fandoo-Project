@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import '../reset_pass/ResetPass.scss'
 import { TextField } from "@material-ui/core";
+
+import UserService from '../../service/userservice';
+
+const service = new UserService();
+
 export class ResetPass extends Component {
     constructor(props) {
         super(props);
@@ -31,8 +36,9 @@ export class ResetPass extends Component {
         var validated = this.validation();
         if (validated) {
             console.log("validation done successfullyyyy")
+
         }
-    }
+        }
 
     changeHandle = (e) => {
         this.setState({
