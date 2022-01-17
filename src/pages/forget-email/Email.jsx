@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../forget-email/Email.css'
+import '../forget-email/Email.scss'
 import { Link } from 'react-router-dom';
 import { TextField ,Button} from "@material-ui/core";
 

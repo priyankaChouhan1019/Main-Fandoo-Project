@@ -159,7 +159,8 @@ export class Signup extends Component {
                     </div>
 
                     <div class="right-part">
-                        <img className="logo1" src={logo} alt="this is logo"></img>
+                        
+                        <img className="logo1" src={logo} alt="this is logo" ></img>
                         < p className="logo-text">One account. All of Google working for you.</p>
                     </div>
                 </div>

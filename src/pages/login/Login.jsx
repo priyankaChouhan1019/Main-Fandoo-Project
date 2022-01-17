@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../login/Login.css'
+import '../login/Login.scss'
 import { TextField } from "@material-ui/core";
 import { Link } from 'react-router-dom';
 import UserService from '../../service/userservice';
@@ -100,7 +100,8 @@ export class Login extends Component {
                         </div>
 
                         <div className="last-section">
-                            <button className="l-next" onClick={this.next}>Next</button>
+                        <Link to="/dashboard">
+                            <button className="l-next" onClick={this.next}>Next</button></Link>
                         </div>
                     </div>
                 </div>

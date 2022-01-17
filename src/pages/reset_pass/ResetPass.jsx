@@ -52,12 +52,12 @@ export class ResetPass extends Component {
                 <div className="container">
                     <div className="first-part">
                         <div className="google-title">
-                            <p style={{ color: 'blue' }} >G</p>
+                            <p style={{ color: 'blue' }} >f</p>
+                            <p style={{ color: 'red' }}>a</p>
+                            <p style={{ color: 'yellow' }}>n</p>
+                            <p style={{ color: 'blue' }}>d</p>
+                            <p style={{ color: 'green' }}>o</p>
                             <p style={{ color: 'red' }}>o</p>
-                            <p style={{ color: 'yellow' }}>o</p>
-                            <p style={{ color: 'blue' }}>g</p>
-                            <p style={{ color: 'green' }}>l</p>
-                            <p style={{ color: 'red' }}>e</p>
                         </div>
                     </div>
                     <div>
