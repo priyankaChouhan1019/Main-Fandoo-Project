@@ -1,0 +1,28 @@
+.search-bar{
+    display: flex;
+
+   .search{
+        height: 46px;
+        padding: 0;
+        margin-left: 56px;
+        margin-right: 49px;
+        overflow: hidden;
+
+    .btn-search{
+        padding: 11px 0;
+        background: transparent;
+        border: none;
+        height: 46px;
+        outline: none;
+        width: 100%;
+        box-sizing: border-box;
+    }  
+    }
+}
+
+.nav-icon{
+    direction: end;
+}
+
+
+

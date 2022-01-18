@@ -53,10 +53,10 @@ export class Signup extends Component {
 
 
             let data = {
-                "firstName": " shan",
-                "lastName": "rathore",
-                "email": "rathor@gmail.com",
-                "password": "125",
+                "firstName": this.state.firstName,
+                "lastName": this.state.lastName,
+                "email": this.state.email,
+                "password": this.state.password,
                 "service": "advance"
             };
 

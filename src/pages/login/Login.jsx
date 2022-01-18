@@ -37,8 +37,8 @@ export class Login extends Component {
         if (validated) {
             console.log("validation done successfullyyyy")
             let data = {
-                "email" : "rathore@gmail.com",
-                "password" : "1235",
+                "email" : this.state.email,
+                "password" : this.state.password,
           };
 
           service.signin(data)

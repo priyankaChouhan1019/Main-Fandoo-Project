@@ -14,22 +14,23 @@ import Dashboard from './pages/dashboard/Dashboard';
 
 function App() {
   return (
-      // <BrowserRouter>
-         <div className="App">
+       <BrowserRouter>
+         {/* <div className="App"> */}
           {/* <Signup />  */}
           {/* <Login /> */}
           {/* <Email /> */}
           {/* <ResetPass /> */}
-          <Dashboard/>
-        </div>
-      //    {/* <Switch>
+          {/* <Dashboard/> */}
+        {/* </div> */}
+          <Switch>
  
-      //    <Route path='/' component={Signup} exact/>
-      //    <Route path='/login' component={Login} />
-      //    <Route path='/forget-email' component={Email} />
-      //    <Route path='/reset_pass' component={ResetPass} />
-      //  </Switch>  */}
-        // </BrowserRouter> 
+         <Route path='/' component={Signup} exact/>
+         <Route path='/login' component={Login} />
+         <Route path='/forget-email' component={Email} />
+         <Route path='/reset_pass' component={ResetPass} />
+         <Route path='/dashboard' component={Dashboard} />
+       </Switch> 
+         </BrowserRouter> 
       
   );
 }

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
+import '../dashboard/Dashboard.scss'
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
@@ -19,11 +20,18 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsActiveOutlined';
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
+import RefreshOutlinedIcon from '@mui/icons-material/RefreshOutlined';
+import ViewStreamOutlinedIcon from '@mui/icons-material/ViewStreamOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 const drawerWidth = 240;
+
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -51,7 +59,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "flex-end",
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar
 }));
 
@@ -65,7 +72,6 @@ const AppBar = styled(MuiAppBar, {
   }),
   ...(open && {
     marginLeft: drawerWidth,
-    // width: `calc(100% - ${drawerWidth}px)`,
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen
@@ -95,22 +101,33 @@ export default function MiniDrawer() {
   const [open, setOpen] = React.useState(false);
   let iconlist = [
     {
-      icons: LightbulbOutlinedIcon,
-      text: "notes"
+      icons: <LightbulbOutlinedIcon/>,
+      icnText: "Notes"
     },
     {
-      icons:  NotificationsOutlinedIcon,
-      text: "notes"
+      icons: <NotificationsOutlinedIcon/>,
+      icnText: "Reminder"
+    },
+
+    {
+      icons: <EditOutlinedIcon/>,
+      icnText: "Edit Labels"
+    },
+
+    {
+      icons:<ArchiveOutlinedIcon/>,
+      icnText: "Archive"
+    },
+
+    {
+      icons:< DeleteOutlinedIcon/>,
+      icnText: "Bin"
     }
   ];
 
   const handleDrawerOpen = () => {
     setOpen(!open);
   };
-
-  // const handleDrawerClose = () => {
-  //   setOpen(false);
-  // };
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -122,37 +139,50 @@ export default function MiniDrawer() {
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            // sx={{
-            //   marginRight: "36px",
-            //   ...(open && { display: "none" })
-            // }}
           >
             <MenuIcon />
           </IconButton>
+
           <Typography variant="h6" noWrap component="div">
-            Mini variant drawer
+            Keep
           </Typography>
+          <div class="search-bar" >
+          <button class="btn-search" type="button" label="">dfsd</button>
+          <div className="search">
+            <input className="input-search" type="text" placeholder="Search"></input>
+          </div>
+          <button class="btn-clear" type="button" label="">dfsd</button>
+          </div>
+
+          <div class="nav-icon">
+              <ListItemIcon>
+                <RefreshOutlinedIcon />
+                <ViewStreamOutlinedIcon />
+                <SettingsOutlinedIcon />
+              </ListItemIcon>     
+          </div>
+          <div class="nav-icon2">
+            <ListItemIcon>
+              <AppsOutlinedIcon/>
+              <AccountCircleOutlinedIcon/>
+            </ListItemIcon>
+          </div>
+
+
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
-          {/* <IconButton onClick={handleDrawerOpen}>
-            {theme.direction === "rtl" ? (
-              <ChevronRightIcon />
-            ) : (
-              <ChevronLeftIcon />
-            )}
-          </IconButton> */}
+
         </DrawerHeader>
         <Divider />
         <List>
-          {/* {["Notes", "Starred", "Send email", "Drafts"].map((text, index) => ( */}
-            {["Inbox", "Reminder", "Edit Label", "Archive", "Bin"].map((text, index) => (
-            <ListItem button key={text}>
+          {iconlist.map((text, index) => (
+            <ListItem button key={text.icnText}>
               <ListItemIcon>
-                {index % 2 === 0 ? <LightbulbOutlinedIcon /> : <MailIcon />}
+                {text.icons}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={text.icnText} />
             </ListItem>
           ))}
         </List>
