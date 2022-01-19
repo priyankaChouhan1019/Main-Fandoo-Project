@@ -1,0 +1,30 @@
+.disp-container{
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    height: 120px;
+    box-shadow: -1px -1px 5px gray;
+    border: lightgray;
+    border-radius: 6px;
+
+    input{
+        outline: none;
+        border: none;
+        width: 75%;
+        height: 70%;
+
+    }
+
+    .disp-icons{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+       
+        .icons-list{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+}

@@ -3,15 +3,8 @@ import React, { Component } from 'react'
 import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurnedInOutlined';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import InsertPhotoOutlinedIcon from '@mui/icons-material/InsertPhotoOutlined';
-
-import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
-import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
-import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
-import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
-import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
-import PhotoOutlinedIcon from '@mui/icons-material/PhotoOutlined';
-
 import '../takeNote/TakeNote.scss'
+import Icons from '../icons/Icons';
 
 export class TakeNote extends Component {
   constructor(props) {
@@ -54,12 +47,7 @@ export class TakeNote extends Component {
 
           <div className="discp-icons">
             <div className="icon-list">
-              <AddAlertOutlinedIcon />
-              <PersonAddAltOutlinedIcon />
-              <ColorLensOutlinedIcon />
-              <PhotoOutlinedIcon />
-              <ArchiveOutlinedIcon />
-              <MoreVertOutlinedIcon />
+              <Icons/>
             </div>
             <button onClick={this.handleClose}>close</button>
           </div>

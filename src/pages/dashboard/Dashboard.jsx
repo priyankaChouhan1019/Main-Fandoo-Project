@@ -2,6 +2,8 @@ import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import '../dashboard/Dashboard.scss'
 import TakeNote from "../../components/takeNote/TakeNote";
+import DisplayNote from "../../components/displayNote/DisplayNote";
+
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
@@ -30,6 +32,7 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+
 
 const drawerWidth = 240;
 
@@ -67,10 +70,10 @@ const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open"
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
-  backgroundColor :"white",
-  boxShadow:"0px",
+  backgroundColor: "white",
+  boxShadow: "0px",
   border: "1px solid lightgray",
-  color : "black",
+  color: "black",
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen
@@ -106,26 +109,26 @@ export default function MiniDrawer() {
   const [open, setOpen] = React.useState(false);
   let iconlist = [
     {
-      icons: <LightbulbOutlinedIcon/>,
+      icons: <LightbulbOutlinedIcon />,
       icnText: "Notes"
     },
     {
-      icons: <NotificationsOutlinedIcon/>,
+      icons: <NotificationsOutlinedIcon />,
       icnText: "Reminder"
     },
 
     {
-      icons: <EditOutlinedIcon/>,
+      icons: <EditOutlinedIcon />,
       icnText: "Edit Labels"
     },
 
     {
-      icons:<ArchiveOutlinedIcon/>,
+      icons: <ArchiveOutlinedIcon />,
       icnText: "Archive"
     },
 
     {
-      icons:< DeleteOutlinedIcon/>,
+      icons: < DeleteOutlinedIcon />,
       icnText: "Bin"
     }
   ];
@@ -152,28 +155,26 @@ export default function MiniDrawer() {
             Keep
           </Typography>
           <div class="search-bar" >
-          <button class="btn-search" type="button" label="">S</button>
-          <div className="search">
+            {/* <button class="btn-search" type="button" label="">S</button> */}
             <input className="input-search" type="text" placeholder="Search"></input>
+            {/* <button class="btn-clear" type="button" label="">C</button> */}
           </div>
-          <button class="btn-clear" type="button" label="">C</button>
-          </div>
-
-          <div class="nav-icon">
+          <div className="nav-right-icon">
+            <div class="nav-icon1">
               <ListItemIcon>
                 <RefreshOutlinedIcon />
                 <ViewStreamOutlinedIcon />
                 <SettingsOutlinedIcon />
-              </ListItemIcon>     
-          </div>
-          <div class="nav-icon2">
-            <ListItemIcon>
-              <AppsOutlinedIcon/>
-              <AccountCircleOutlinedIcon/>
-            </ListItemIcon>
-          </div>
+              </ListItemIcon>
+            </div>
+            <div class="nav-icon2">
+              <ListItemIcon>
+                <AppsOutlinedIcon />
+                <AccountCircleOutlinedIcon />
+              </ListItemIcon>
+            </div>
 
-
+          </div>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
@@ -195,6 +196,7 @@ export default function MiniDrawer() {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <TakeNote />
+        <DisplayNote/>
         <Typography paragraph></Typography>
         <Typography paragraph></Typography>
       </Box>

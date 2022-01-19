@@ -1,22 +1,27 @@
 .search-bar{
     display: flex;
+    border: none;
+    padding: 11px 0;
+    background: transparent;
+    border: none;
+    height: 46px;
+    outline: none;
+    justify-content: center;
+    width: 70%;
+    box-sizing: border-box;
+}
+.nav-right-icon{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
 
-   .search{
-        height: 46px;
-        padding: 0;
-        margin-left: 56px;
-        margin-right: 49px;
-        overflow: hidden;
+    .nav-icon1{
+       
+        
+    }
 
-    .btn-search{
-        padding: 11px 0;
-        background: transparent;
-        border: none;
-        height: 46px;
-        outline: none;
-        width: 100%;
-        box-sizing: border-box;
-        }  
+    .nav-icon2{
+        width: 10%;
     }
 }
 
