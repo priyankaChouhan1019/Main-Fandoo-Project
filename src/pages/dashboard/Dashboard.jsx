@@ -67,6 +67,10 @@ const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open"
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
+  backgroundColor :"white",
+  boxShadow:"0px",
+  border: "1px solid lightgray",
+  color : "black",
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen
@@ -148,11 +152,11 @@ export default function MiniDrawer() {
             Keep
           </Typography>
           <div class="search-bar" >
-          <button class="btn-search" type="button" label="">dfsd</button>
+          <button class="btn-search" type="button" label="">S</button>
           <div className="search">
             <input className="input-search" type="text" placeholder="Search"></input>
           </div>
-          <button class="btn-clear" type="button" label="">dfsd</button>
+          <button class="btn-clear" type="button" label="">C</button>
           </div>
 
           <div class="nav-icon">

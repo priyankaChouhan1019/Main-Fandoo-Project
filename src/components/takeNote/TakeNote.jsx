@@ -21,11 +21,24 @@ export class TakeNote extends Component {
        open :true
     }
   }
+
+  handleOpen = () =>{
+    this.setState({
+      open :false
+    })   
+  }
+
+  handleClose = () =>{
+    this.setState({
+      open :true
+    })   
+  }
   
   render() {
     return (
       <div>
-
+        {
+          this.state.open ?
         <div className="title-container">
           <input type="text" name="note" placeholder='Take a Note' onClick={this.handleOpen}/>
           <div className="title-icons">
@@ -34,7 +47,7 @@ export class TakeNote extends Component {
             <InsertPhotoOutlinedIcon />
           </div>
         </div>
-
+        :
         <div className="discp-container">
           <input type="text" name="note" placeholder='Take a Note' />
           <input type="text" name="discription" placeholder='Discription' />
@@ -48,10 +61,11 @@ export class TakeNote extends Component {
               <ArchiveOutlinedIcon />
               <MoreVertOutlinedIcon />
             </div>
-            <button>close</button>
+            <button onClick={this.handleClose}>close</button>
           </div>
 
         </div>
+  }
       </div>
     )
   }
