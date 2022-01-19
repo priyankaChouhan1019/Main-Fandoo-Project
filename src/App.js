@@ -7,7 +7,7 @@ import {
 import logo from './logo.svg';
 import './App.css';
 import Signup from './pages/signup/Signup';
- import Login from './pages/login/Login';
+import Login from './pages/login/Login';
 import Email from './pages/forget-email/Email';
 import ResetPass from './pages/reset_pass/ResetPass';
 import Dashboard from './pages/dashboard/Dashboard';

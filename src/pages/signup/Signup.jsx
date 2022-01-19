@@ -2,8 +2,7 @@
 import React, { Component } from 'react'
 // import '../pages/signup/Signup.scss'
 import '../signup/Signup.scss'
-import logo from '../signup/assets/googleLogo.png';
-//import '../signup/Signup.jsx'
+import logo from '../signup/googleLogo.png';
 import { TextField } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import UserService from '../../service/userservice';

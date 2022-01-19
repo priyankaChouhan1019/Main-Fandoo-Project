@@ -1,6 +1,7 @@
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import '../dashboard/Dashboard.scss'
+import TakeNote from "../../components/takeNote/TakeNote";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
@@ -189,6 +190,7 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
+        <TakeNote />
         <Typography paragraph></Typography>
         <Typography paragraph></Typography>
       </Box>
