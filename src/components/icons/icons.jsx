@@ -10,7 +10,7 @@ import PhotoOutlinedIcon from '@mui/icons-material/PhotoOutlined';
 export class Icons extends Component {
   render() {
     return (
-      <div>
+      <div cl>
               <AddAlertOutlinedIcon />
               <PersonAddAltOutlinedIcon />
               <ColorLensOutlinedIcon />

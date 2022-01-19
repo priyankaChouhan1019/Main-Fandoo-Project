@@ -5,6 +5,7 @@ import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import PhotoOutlinedIcon from '@mui/icons-material/PhotoOutlined';
+import { Button} from "@material-ui/core";
 import '../displayNote/DisplayNote.scss'
 
 export class DisplayNote extends Component {
@@ -16,12 +17,13 @@ export class DisplayNote extends Component {
 
           <div className="disp-icons">
             <div className="icons-list">
-            <AddAlertOutlinedIcon />
+              <AddAlertOutlinedIcon />
               <PersonAddAltOutlinedIcon />
               <ColorLensOutlinedIcon />
               <PhotoOutlinedIcon />
               <ArchiveOutlinedIcon />
               <MoreVertOutlinedIcon />
+              <Button className="secondCButton" variant="text" onClick={this.handleClose}>Close</Button>
              
             </div>
           </div>

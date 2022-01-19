@@ -3,6 +3,7 @@ import { styled, useTheme } from "@mui/material/styles";
 import '../dashboard/Dashboard.scss'
 import TakeNote from "../../components/takeNote/TakeNote";
 import DisplayNote from "../../components/displayNote/DisplayNote";
+import Notes from "../notes/Notes";
 
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
@@ -195,8 +196,7 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        <TakeNote />
-        <DisplayNote/>
+        <Notes/>
         <Typography paragraph></Typography>
         <Typography paragraph></Typography>
       </Box>

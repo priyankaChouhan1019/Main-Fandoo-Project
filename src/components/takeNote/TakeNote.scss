@@ -50,6 +50,13 @@
             justify-content: space-around;
         }
     }
+    
+}
 
+@media screen  and (max-width :600){
+    .title-container{
+        width: 280px;
+        margin: 0%;
+    }
     
 }
