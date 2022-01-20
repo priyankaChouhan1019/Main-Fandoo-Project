@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../reset_pass/ResetPass.scss'
 import { TextField } from "@material-ui/core";
-
+import { Link } from "react-router-dom";
 import UserService from '../../service/userservice';
 
 const service = new UserService();
@@ -34,10 +34,25 @@ export class ResetPass extends Component {
 
     next = () => {
         var validated = this.validation();
-        if (validated) {
-            console.log("validation done successfullyyyy")
+        if (!validated) {
+            console.log("validation successfull")
 
-        }
+            if(this.state.password === this.state.confirm_password){
+                let data ={
+                    "password":this.state.password,
+                };
+
+                service.reset(data)
+                    .then(res=>{
+                        console.log(res)
+                        localStorage.setItem('token' , res.data.id)
+                    })
+                    .catch(err=>{
+                        console.log(err)
+                    })
+            }
+
+        }else console.log("something missing");
         }
 
     changeHandle = (e) => {
@@ -47,6 +62,7 @@ export class ResetPass extends Component {
     };
 
     render() {
+        console.log(this.state)
         return (
             <div className="main-page">
                 <div className="container">
@@ -76,7 +92,9 @@ export class ResetPass extends Component {
                             helperText={this.state.confirm_passError ? "password required" : " "}
                             onChange={(e) => this.changeHandle(e)} />
                     </div>
+                    <Link to="/login"></Link>
                     <button className="next-button" onClick={this.next}>Next</button>
+                    <Link/>
                 </div>
             </div>
         )

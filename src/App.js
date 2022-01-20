@@ -8,6 +8,7 @@ import logo from './logo.svg';
 import './App.css';
 import Signup from './pages/signup/Signup';
 import Login from './pages/login/Login';
+//import Forgot from './pages/forget-email/Forgot';
 import Forgot from './pages/forget-email/Forgot';
 import ResetPass from './pages/reset_pass/ResetPass';
 import Dashboard from './pages/dashboard/Dashboard';
