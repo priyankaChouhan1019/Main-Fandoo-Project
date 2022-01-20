@@ -16,7 +16,7 @@ class NoteService {
       return service.postMethod(`${baseUrl}notes/addNotes`,data, headerConfig);
   }
 
-  getNote(data){
+  getNote(){
     return service.postMethod(`${baseUrl}notes/getNotesList`,{},headerConfig);
   }
 

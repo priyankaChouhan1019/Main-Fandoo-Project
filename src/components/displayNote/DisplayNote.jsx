@@ -9,11 +9,15 @@ import { Button} from "@material-ui/core";
 import '../displayNote/DisplayNote.scss'
 
 export class DisplayNote extends Component {
+constructor(props){
+  super(props)
+}
   render() {
     return (
-     
+
         <div className="disp-container">
-          <input type="text" name="note" placeholder='Take a Note' />
+           <input type="text" name="note" placeholder='title' />
+          <input type="text" name="note" placeholder='discription' />
 
           <div className="disp-icons">
             <div className="icons-list">
@@ -23,6 +27,7 @@ export class DisplayNote extends Component {
               <PhotoOutlinedIcon />
               <ArchiveOutlinedIcon />
               <MoreVertOutlinedIcon />
+
               <Button className="secondCButton" variant="text" onClick={this.handleClose}>Close</Button>
              
             </div>

@@ -13,10 +13,15 @@ class UserService{
         return service.postMethod(`${baseurl}user/login`,data);
     }
 
-    email(data){
-        return service.postMethod(`${baseurl}user/login`,data);
+    forgot(data){
+        return service.postMethod(`${baseurl}user/reset`,data);
     }
 
+    reset(data) {
+        return service.postMethod(`${baseurl}user/reset-password`, data)
+      }
+
+  
 }
 
 export default UserService

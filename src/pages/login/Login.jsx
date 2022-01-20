@@ -3,7 +3,7 @@ import '../login/Login.scss'
 import { TextField } from "@material-ui/core";
 import { Link } from 'react-router-dom';
 import UserService from '../../service/userservice';
-
+import axios from 'axios';
 const service = new UserService();
 
 export class Login extends Component {
@@ -44,20 +44,23 @@ export class Login extends Component {
           service.signin(data)
           .then(res =>{
               console.log(res)
+              localStorage.setItem('token',res.data.id)
           })
           .catch(err =>{
               console.log(err)
           })
         }
+            else console.log("missed somthing")
         }
         
     
 
     changeHandle = (e) => {
+        //console.log(e.target.value)
         this.setState({
             [e.target.name]: e.target.value,
-        });
-    };
+        })
+    }
 
     render() {
         return (

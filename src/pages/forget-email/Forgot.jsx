@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../forget-email/Email.scss'
+import '../forget-email/Forgot.scss'
 import { Link } from 'react-router-dom';
 import { TextField ,Button} from "@material-ui/core";
 
@@ -7,13 +7,13 @@ import UserService from '../../service/userservice';
 
 const service = new UserService();
 
-export class Email extends Component {
+export class Forgot extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            email_text: "",
+            email_text: '',
             email_textError :false
         };
     }
@@ -37,7 +37,7 @@ export class Email extends Component {
             console.log("validation done successfullyyyy")
 
             let data = {
-                "email": "testingpm@gmail.com"
+               // "email": this.state.email_text
               
           };
 
@@ -48,12 +48,12 @@ export class Email extends Component {
           .catch(err =>{
               console.log(err)
           })
-        }
+        } else console.log("somthing missing")
     }
 
     changeHandle = (e) => {
         this.setState({
-            [e.target.name]: e.target.value,
+            [e.target.name]: e.target.value
         });
     };
 
@@ -96,4 +96,4 @@ export class Email extends Component {
     }
 }
 
-export default Email
+export default Forgot

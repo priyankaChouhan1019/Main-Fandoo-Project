@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../icons/Icons.scss'
+//import '../icons/Icons.scss'
 import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';

@@ -61,7 +61,8 @@ export class Signup extends Component {
 
             service.registration(data)
                 .then(res => {
-                    console.log(res)
+                   
+                   // console.log(res)
                 })
                 .catch(err => {
                     console.log(err)
