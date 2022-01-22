@@ -161,21 +161,22 @@ export default function MiniDrawer() {
             {/* <button class="btn-clear" type="button" label="">C</button> */}
           </div>
           <div className="nav-right-icon">
-            <div class="nav-icon1">
+            <div className="nav-icon1">
               <ListItemIcon>
                 <RefreshOutlinedIcon />
                 <ViewStreamOutlinedIcon />
                 <SettingsOutlinedIcon />
               </ListItemIcon>
             </div>
-            <div class="nav-icon2">
+            </div>
+            <div className="nav-icon2">
               <ListItemIcon>
                 <AppsOutlinedIcon />
                 <AccountCircleOutlinedIcon />
               </ListItemIcon>
             </div>
 
-          </div>
+          
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>

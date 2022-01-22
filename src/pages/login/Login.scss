@@ -1,10 +1,8 @@
 .main-page{
     width: 100%;
     margin: 15vh 0vw;
-    /* display: flex; */
-    /* align-items: center; */
     justify-content: center;
-}
+
 
 .page-container{
     padding: 1.5vh;
@@ -14,14 +12,7 @@
      border: 1px solid lightgray;
      border-radius: 5px;
      margin-top: 100px;
-}
-/* 
-.first-content{
-    justify-content: center;
-    font-weight:bold;
-    font-size:20px; 
-    margin-top: 10px;
-} */
+
 
 .login-title{
     display: flex;
@@ -62,7 +53,7 @@
     cursor: pointer;
     /* display: inline-block; */
     font-weight: 500;
-    margin: -2vh 0vw 0vh 0vw;
+    margin: -0vh 0vw 2vh 0vw;
 }
 
 #forgotPassword{
@@ -70,7 +61,7 @@
     color: #1a73e8;
     text-align: left;
     cursor: pointer;
-    margin: -2vh 0vw 0vh 0vw;
+    margin: -0vh 0vw 0vh 0vw;
     /* display: inline-block; */
     font-weight: 500;
 }
@@ -116,4 +107,14 @@
 .last-section{
        /* margin: 2vh 0vw 0vh 10vw;    */
        direction: rtl; 
+}
+
+@media only screen and (max-width:600) {
+    .page-container{
+        border: none;
+        width: 100%;
+    }
+    
+}
+}
 }

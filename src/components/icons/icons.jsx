@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-//import '../icons/Icons.scss'
+import '../icons/Icons.scss'
 import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
@@ -10,7 +10,7 @@ import PhotoOutlinedIcon from '@mui/icons-material/PhotoOutlined';
 export class Icons extends Component {
   render() {
     return (
-      <div cl>
+      <div className='icons-list'>
               <AddAlertOutlinedIcon />
               <PersonAddAltOutlinedIcon />
               <ColorLensOutlinedIcon />

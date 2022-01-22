@@ -12,7 +12,8 @@
         outline: none;
         border: none;
         width: 75%;
-        height: 70%;
+        //height: 70%;
+        height: 45%;
 
     }
 
@@ -21,10 +22,11 @@
         display: flex;
         justify-content: space-between;
        
-        .icons-list{
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-        }
+        // .icons-list{
+        //     width: 100%;
+        //     display: flex;
+        //     justify-content: space-around;
+           
+        // }
     }
 }

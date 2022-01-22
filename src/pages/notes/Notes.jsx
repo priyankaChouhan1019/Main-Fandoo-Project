@@ -15,25 +15,32 @@ export class Notes extends Component {
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
+    this.gettheNotes();
+}
+
+gettheNotes = () => { //for refresh display
     noteService.getNote()
-    .then((res)=>{
+        .then((res) => {
+          console.log(res)
+          //updateing notes
+            this.setState({
+                noteArr: res.data.data.data
+            })
+            console.log(this.state.noteArr)
+        })
+        .catch((err) => {
 
-      this.setState({
-        noteArr:res.data
-      })
-
-    })
-    .catch((err)=>{
-
-    })
-
-  }
+        })
+}
   render() {
     return (
       <div  className="note-box">
-         <TakeNote/>
-         <DisplayNote notearray ={ this.state.noteArr }/>
+
+
+         <TakeNote />
+         {/* <TakeNote refreshDispNote ={this.gettheNotes}/> */}
+         <DisplayNote notesArray ={ this.state.noteArr }/>
       </div>
     )
   }

@@ -4,6 +4,12 @@ const service = new AxiosService();
 
 let baseurl='http://fundoonotes.incubation.bridgelabz.com/api/';
 
+let header={
+    headers:{
+      Authorization:localStorage.getItem("token")
+    }
+  }
+
 class UserService{
 
     registration(data){
@@ -18,7 +24,7 @@ class UserService{
     }
 
     reset(data) {
-        return service.postMethod(`${baseurl}user/reset-password`, data)
+        return service.postMethod(`${baseurl}user/reset-password`,data,header)
       }
 
   

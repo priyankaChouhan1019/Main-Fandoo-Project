@@ -34,7 +34,7 @@ export class Login extends Component {
 
     next = () => {
         var validated = this.validation();
-        if (validated) {
+        if (!validated) {
             console.log("validation done successfullyyyy")
             let data = {
                 "email" : this.state.email,
@@ -45,6 +45,7 @@ export class Login extends Component {
           .then(res =>{
               console.log(res)
               localStorage.setItem('token',res.data.id)
+              console.log( localStorage.setItem('token',res.data.id))
           })
           .catch(err =>{
               console.log(err)

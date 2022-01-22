@@ -13,37 +13,38 @@ export class Forgot extends Component {
         super(props);
 
         this.state = {
-            email_text: '',
-            email_textError :false
+            email: '',
+            emailError :false
         };
     }
 
     validation = () => {
         let isError = false;
         const error = this.state;
-        error.email_textError = this.state.email_text === '' ? true : false;
+        error.emailError = this.state.email === '' ? true : false;
 
         this.setState({
             ...error
         })
 
-        return isError = error.email_textError;
+        return isError = error.emailError;
 
     }
 
     next = () => {
         var validated = this.validation();
-        if (validated) {
+        if (!validated) {
             console.log("validation done successfullyyyy")
 
             let data = {
-               // "email": this.state.email_text
+               "email": this.state.email
               
           };
-
-          service.email(data)
+         
+          service.forgot(data)
           .then(res =>{
               console.log(res)
+              localStorage.setItem('token',res.data.id)
           })
           .catch(err =>{
               console.log(err)
@@ -80,14 +81,14 @@ export class Forgot extends Component {
                     </div>
 
                     <div className="email-text">
-                        <TextField name ="email_text" id="outlined-basic" label="Phone number or email" variant="outlined" 
-                         error={this.state.email_textError}
-                         helperText={this.state.email_textError ? "email or password required" : " "}
+                        <TextField name ="email" id="outlined-basic" label="Phone number or email" variant="outlined" 
+                         error={this.state.emailError}
+                         helperText={this.state.emailError ? "email or password required" : " "}
                          onChange={(e) => this.changeHandle(e)}/>
                     </div>
                     <div class="email_button">
-                    <Link to="/reset_pass">
-                      <Button variant="contained" onClick={this.next}>Next</Button>  </Link>
+                  
+                      <Button variant="contained" onClick={this.next}>Next</Button>  
                      {/* <button className="email-button" onClick={this.next}>Next</button> */}
                     </div>
                 </div>

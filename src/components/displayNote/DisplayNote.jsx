@@ -1,40 +1,36 @@
 import React, { Component } from 'react'
-import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
-import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
-import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
-import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
-import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
-import PhotoOutlinedIcon from '@mui/icons-material/PhotoOutlined';
-import { Button} from "@material-ui/core";
 import '../displayNote/DisplayNote.scss'
+import Icons from '../icons/Icons';
 
 export class DisplayNote extends Component {
-constructor(props){
-  super(props)
-}
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  }
   render() {
     return (
 
-        <div className="disp-container">
-           <input type="text" name="note" placeholder='title' />
-          <input type="text" name="note" placeholder='discription' />
+      <div className="disp-container">
+        {/* {this.props.notesArray.map((item, index) => (
+          <div >
+            {item.title}
+            {item.description} */}
+            <input type="text" name="note" placeholder='title'/>
+            <input type="text" name="note" placeholder='description'/>
 
-          <div className="disp-icons">
-            <div className="icons-list">
-              <AddAlertOutlinedIcon />
-              <PersonAddAltOutlinedIcon />
-              <ColorLensOutlinedIcon />
-              <PhotoOutlinedIcon />
-              <ArchiveOutlinedIcon />
-              <MoreVertOutlinedIcon />
+            <div className="disp-icons">
+              <div className="icons-list">
+                <Icons />
 
-              <Button className="secondCButton" variant="text" onClick={this.handleClose}>Close</Button>
-             
+              </div>
             </div>
-          </div>
+          {/* </div>
+        ))} */}
+      </div>
 
-        </div>
-    
+
     )
   }
 }

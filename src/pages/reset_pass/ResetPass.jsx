@@ -38,14 +38,18 @@ export class ResetPass extends Component {
             console.log("validation successfull")
 
             if(this.state.password === this.state.confirm_password){
+               // console.log(this.state.password)
                 let data ={
-                    "password":this.state.password,
+                    "newPassword":this.state.password,
                 };
+                console.log(data)
 
                 service.reset(data)
+                    console.log(data)
                     .then(res=>{
-                        console.log(res)
-                        localStorage.setItem('token' , res.data.id)
+                      //  console.log(res.data)
+                        console.log(res)           
+                   
                     })
                     .catch(err=>{
                         console.log(err)
@@ -92,9 +96,9 @@ export class ResetPass extends Component {
                             helperText={this.state.confirm_passError ? "password required" : " "}
                             onChange={(e) => this.changeHandle(e)} />
                     </div>
-                    <Link to="/login"></Link>
+                    <Link to="/login">
                     <button className="next-button" onClick={this.next}>Next</button>
-                    <Link/>
+                    </Link>
                 </div>
             </div>
         )

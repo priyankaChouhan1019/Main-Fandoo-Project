@@ -1,4 +1,22 @@
-.search-bar{
+$icon1Color : #777777;
+
+@mixin inputSearch {
+    height: 1cm;
+    width: 70px;
+    border: none;
+    outline: none;
+    border-radius: 10px;  
+}
+
+@mixin navIcon1 {
+    display: flex;
+    font-size: 20px;
+    color: $icon1Color;
+    justify-content: space-around;
+    
+}
+
+@mixin searchBar {
     display: flex;
     border: none;
     padding: 11px 0;
@@ -7,24 +25,27 @@
     height: 46px;
     outline: none;
     justify-content: center;
-    width: 70%;
-    box-sizing: border-box;
+    width: 60%;
+    box-sizing: border-box;    
 }
+
+.search-bar{
+    @include searchBar();
+
+    .input-search{
+        @include inputSearch();
+    }
+}
+
 .nav-right-icon{
-    width: 30%;
-    display: flex;
-    justify-content: space-between;
+     width: 40%;
 
     .nav-icon1{
-       
-        
-    }
-
-    .nav-icon2{
-        width: 10%;
+       @include navIcon1();  
+       margin:20px;    
     }
 }
-
+    
 .nav-icon{
     display:flex;
 }

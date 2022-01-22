@@ -14,7 +14,9 @@ export class TakeNote extends Component {
     super(props)
 
     this.state = {
-      open: true
+      open: true,
+      title: '',
+      description: ''
     }
   }
 
@@ -25,10 +27,6 @@ export class TakeNote extends Component {
   }
 
   handleClose = () => {
-    this.setState({
-      open: true
-    })
-
 
     let data = {
       "title": this.state.title,
@@ -36,17 +34,23 @@ export class TakeNote extends Component {
     }
 
     noteService.addNote(data)
-      .then(() => {
+      .then(res => {
+        this.props.gettheNotes(); //refreshDisplaynote
+        //console.log(res)
+
         this.setState({
           open: true,
           title: '',
           description: ''
         })
       })
+      .catch(err =>{
+        console.log(err)
+      })
 
   }
 
-  getNotesOnChange = (e) => {
+  getNotesChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     })
@@ -54,7 +58,7 @@ export class TakeNote extends Component {
 
   render() {
     return (
-      <div>
+      <div className='Take-container'>
         {
           this.state.open ?
             <div className="title-container">
@@ -67,8 +71,8 @@ export class TakeNote extends Component {
             </div>
             :
             <div className="discp-container">
-              <input type="text" name="title" placeholder='Take a Note' />
-              <input type="text" name="description" placeholder='Discription' />
+              <input type="text" name="title" placeholder='Take a Note' onChange={(e) => this.getNotesChange(e)} />
+              <input type="text" name="description" placeholder='Discription' onChange={(e) => this.getNotesChange(e)} />
 
               <div className="discp-icons">
                 <div className="icon-list">

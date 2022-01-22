@@ -1,4 +1,7 @@
 
+
+
+
 @mixin buttonstyle {
     margin: -2vh 0vw 0vh 20vw ;
     color: white;
@@ -14,35 +17,45 @@
     justify-content: center;
 }
 
+@mixin justyfyAlign {
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin google-title {
+    display: flex;
+    font-size: 25px;
+    margin-left: 40px;
+}
+
 .main-page{
     width: 100%;
     height: 60%;
     margin: 15vh 0vw;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    @include justyfyAlign();
+
 .container{
     width: 30%;
     height: 70vh;
     border: 1px solid rgb(207, 203, 203);
     border-radius: 8px;
-    justify-content: center;    
-    align-items: center;
-}
-.google-title{
-    display: flex;
-    font-size: 25px;
-    margin-left: 40px;
-    /* justify-content: center; */
-}
+     @include justyfyAlign();
+
+     .first-part{
+        justify-content: center;
+        margin-bottom: 20px;
+        .google-title{
+            @include google-title();
+              
+          }
+    }
+
+
 .find-email{
     margin-top: 20px;
 }
-.first-part{
-    justify-content: center;
-    margin-bottom: 20px;
-}
+
 .password-para{
     font-size: 22px;
     margin-top: 5px;
@@ -57,4 +70,12 @@
 
 .next-button{
    @include buttonstyle();
+}
+
+}
+
+}
+
+@media only screen and(max-width:600) {
+    
 }
