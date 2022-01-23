@@ -37,6 +37,9 @@ export class Login extends Component {
         if (!validated) {
             console.log("validation done successfullyyyy")
             let data = {
+
+            //    id: priyaaa1019chouhan@gmail.com
+            //    pass: priya1019
                 "email" : this.state.email,
                 "password" : this.state.password,
           };

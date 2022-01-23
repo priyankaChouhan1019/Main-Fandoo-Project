@@ -77,6 +77,13 @@ export class DisplayNote extends Component {
         })
     }
 
+    howerTitleDesc = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+        console.log(e.target.value)
+    }
+
     render() {
         return (
 
@@ -99,13 +106,14 @@ export class DisplayNote extends Component {
                 <BootstrapDialog onClose={this.handleClose} aria-labelledby="customized-dialog-title" open={this.state.open}>
                     <div style={{ width: "100%", overflow: "hidden"}}>
                         <BootstrapDialogTitle id="customized-dialog-title" onClose={this.handleClose} >
-                            Title
-
+                            <div className='hower-title'>
+                            <input type="text" style={{ border: "none", outline: "none" }} value={this.state.title} name="title" onChange={(e) => this.howerTitleDesc(e)} />
+                            </div>
                         </BootstrapDialogTitle>
                         <DialogContent>
-
-                            Description
-
+                            <div className='hower-desp'>
+                            <input type="text" style={{ border: "none", outline: "none" }} value={this.state.description} name="description" onChange={(e) => this.howerTitleDesc(e)} />
+                            </div>
                         </DialogContent>
                         <DialogContent className="close-Icon" >
 
