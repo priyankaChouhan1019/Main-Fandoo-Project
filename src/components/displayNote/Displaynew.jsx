@@ -11,6 +11,8 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
 
+
+
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
         padding: theme.spacing(2),
@@ -59,9 +61,10 @@ export class DisplayNote extends Component {
             title: this.props.notesArray.title,
             description: this.props.notesArray.description
 
+            
         };
     }
-
+            
     handleOpenTitle = (item) => {
         this.setState({
             open: true,
@@ -85,6 +88,8 @@ export class DisplayNote extends Component {
     }
 
     render() {
+
+    
         return (
 
             <div className="disp-container">
@@ -99,7 +104,9 @@ export class DisplayNote extends Component {
 
                                 </div>
                             </div>
+                            
                         </div>
+                       
                     </div>
                 ))}
 
@@ -122,7 +129,10 @@ export class DisplayNote extends Component {
                         </DialogContent>
 
                     </div>
+                    
                 </BootstrapDialog>
+
+               
             </div>
 
 
