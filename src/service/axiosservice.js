@@ -3,12 +3,12 @@ import axios from 'axios';
 
 class AxiosService{
 
-    postMethod(url,data,header=false){
-        return axios.post(url,data,header)
+    postMethod(url,data,headers=false){
+        return axios.post(url,data,headers)
     }
 
-    getMethod(url,header =false){
-        return axios.get(url,header)
+    getMethod(url,headers =false){
+        return axios.get(url,headers)
     }
 
 }

@@ -11,13 +11,17 @@ $borderColor :lightgray;
     border: $borderColor;
     display: flex;
     height: 40px;
-     align-items: center;
-    justify-content: center;
+    align-items: center;
     border-radius: 6px;
     width: 50%;
 
     
 }
+.take-container{
+    display: flex;
+    justify-content: center;
+
+
 
 .title-container{
     @include titleContainer();
@@ -63,11 +67,11 @@ $borderColor :lightgray;
     }
 }
 
-
-@media screen  and (max-width :600){
-    .title-container{
-        width: 280px;
-        margin: 0%;
-    }
-    
 }
+// @media screen  and (max-width :600){
+//     .title-container{
+//         width: 280px;
+//         margin: 0%;
+//     }
+    
+// }

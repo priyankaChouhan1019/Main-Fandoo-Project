@@ -1,54 +1,56 @@
+
 $icon1Color : #777777;
 
 @mixin inputSearch {
     height: 1cm;
-    width: 70px;
     border: none;
     outline: none;
-    border-radius: 10px;  
+    border-radius: 5px;
+    background-color: #f1f3f4;  
 }
 
-@mixin navIcon1 {
-    display: flex;
-    font-size: 20px;
-    color: $icon1Color;
-    justify-content: space-around;
-    
-}
+
 
 @mixin searchBar {
-    display: flex;
     border: none;
-    padding: 11px 0;
-    background: transparent;
-    border: none;
-    height: 46px;
     outline: none;
-    justify-content: center;
     width: 60%;
+    height: 40px;
+    
+    border-radius: 5px;
     box-sizing: border-box;    
+    background-color: #f1f3f4;
+}
+.heaadbar{
+    display: flex;
+    justify-content: space-around;
+    height: 60px;
+    align-items: center;
 }
 
 .search-bar{
     @include searchBar();
+    background-color: #f1f3f4;
+  
 
     .input-search{
         @include inputSearch();
     }
+    #search-icon{
+    align-self: center;
+    }
 }
 
 .nav-right-icon{
-     width: 40%;
-
-    .nav-icon1{
-       @include navIcon1();  
-       margin:20px;    
-    }
+     width: 15%;
+     display: flex;
+     justify-content:space-between;
+     align-items: center;
 }
     
-.nav-icon{
-    display:flex;
-}
+// .nav-icon{
+//     display:flex;
+// }
 
 
 

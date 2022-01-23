@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import DisplayNote from '../../components/displayNote/DisplayNote'
 import TakeNote from '../../components/takeNote/TakeNote'
 import '../notes/Notes.scss'
 import NoteService from '../../service/notesservice'
+import Displaynew from '../../components/displayNote/Displaynew'
+
 
 const noteService = new NoteService();
 export class Notes extends Component {
@@ -38,9 +39,10 @@ gettheNotes = () => { //for refresh display
       <div  className="note-box">
 
 
-         <TakeNote />
-         {/* <TakeNote refreshDispNote ={this.gettheNotes}/> */}
-         <DisplayNote notesArray ={ this.state.noteArr }/>
+         {/* <TakeNote /> */}
+         <TakeNote refreshDispNote ={this.gettheNotes}/>
+         {/* <DisplayNote notesArray ={this.state.noteArr}/> */}
+         <Displaynew notesArray ={this.state.noteArr}/>
       </div>
     )
   }

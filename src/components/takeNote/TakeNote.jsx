@@ -35,9 +35,8 @@ export class TakeNote extends Component {
 
     noteService.addNote(data)
       .then(res => {
-        this.props.gettheNotes(); //refreshDisplaynote
-        //console.log(res)
-
+        // refreshDisplaynote
+        this.props.refreshDispNote(); 
         this.setState({
           open: true,
           title: '',
@@ -58,7 +57,7 @@ export class TakeNote extends Component {
 
   render() {
     return (
-      <div className='Take-container'>
+      <div className='take-container'>
         {
           this.state.open ?
             <div className="title-container">
@@ -82,8 +81,10 @@ export class TakeNote extends Component {
               </div>
 
             </div>
+           
         }
-      </div>
+         </div>
+      
     )
   }
 }

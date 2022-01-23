@@ -2,7 +2,6 @@ import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import '../dashboard/Dashboard.scss'
 import TakeNote from "../../components/takeNote/TakeNote";
-import DisplayNote from "../../components/displayNote/DisplayNote";
 import Notes from "../notes/Notes";
 
 import Box from "@mui/material/Box";
@@ -33,6 +32,7 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 
 const drawerWidth = 240;
@@ -142,7 +142,7 @@ export default function MiniDrawer() {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <Toolbar>
+        <Toolbar class="heaadbar">
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -156,27 +156,21 @@ export default function MiniDrawer() {
             Keep
           </Typography>
           <div class="search-bar" >
-            {/* <button class="btn-search" type="button" label="">S</button> */}
             <input className="input-search" type="text" placeholder="Search"></input>
-            {/* <button class="btn-clear" type="button" label="">C</button> */}
           </div>
           <div className="nav-right-icon">
-            <div className="nav-icon1">
-              <ListItemIcon>
-                <RefreshOutlinedIcon />
-                <ViewStreamOutlinedIcon />
-                <SettingsOutlinedIcon />
-              </ListItemIcon>
-            </div>
-            </div>
-            <div className="nav-icon2">
-              <ListItemIcon>
-                <AppsOutlinedIcon />
-                <AccountCircleOutlinedIcon />
-              </ListItemIcon>
-            </div>
 
-          
+            <RefreshOutlinedIcon />
+            <ViewStreamOutlinedIcon />
+            <SettingsOutlinedIcon />
+
+
+            <AppsOutlinedIcon />
+            <AccountCircleOutlinedIcon />
+
+          </div>
+
+
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
@@ -197,7 +191,7 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        <Notes/>
+        <Notes />
         <Typography paragraph></Typography>
         <Typography paragraph></Typography>
       </Box>
