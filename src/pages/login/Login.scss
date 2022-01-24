@@ -105,12 +105,12 @@ $color-primary :#1a73e8;
             direction: rtl; 
         }
 
-        @media only screen and (max-width:600) {
-            .page-container{
-                border: none;
-                width: 100%;
-            }
-            
-        }
+        
     }
+}
+@media only screen and (max-width:600) {
+    .page-container{
+        border:0;
+       // width: 100%;
+    }  
 }

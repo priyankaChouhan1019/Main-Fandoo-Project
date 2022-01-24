@@ -38,26 +38,26 @@ export class Login extends Component {
             console.log("validation done successfullyyyy")
             let data = {
 
-            //    id: priyaaa1019chouhan@gmail.com
-            //    pass: priya1019
-                "email" : this.state.email,
-                "password" : this.state.password,
-          };
+                //    id: priyaaa1019chouhan@gmail.com
+                //    pass: priya1019
+                "email": this.state.email,
+                "password": this.state.password,
+            };
 
-          service.signin(data)
-          .then(res =>{
-              console.log(res)
-              localStorage.setItem('token',res.data.id)
-              console.log( localStorage.setItem('token',res.data.id))
-          })
-          .catch(err =>{
-              console.log(err)
-          })
+            service.signin(data)
+                .then(res => {
+                    console.log(res)
+                    localStorage.setItem('token', res.data.id)
+                    console.log(localStorage.setItem('token', res.data.id))
+                })
+                .catch(err => {
+                    console.log(err)
+                })
         }
-            else console.log("missed somthing")
-        }
-        
-    
+        else console.log("missed somthing")
+    }
+
+
 
     changeHandle = (e) => {
         //console.log(e.target.value)
@@ -103,12 +103,12 @@ export class Login extends Component {
                     </div>
                     <div className="create">
                         <div className="l-text">
-                        <Link to="/"> <p  >Create account ?</p></Link>
+                            <Link to="/"> <p  >Create account ?</p></Link>
                         </div>
 
                         <div className="last-section">
-                        <Link to="/dashboard">
-                            <button className="l-next" onClick={this.next}>Next</button></Link>
+                            <Link to="/dashboard">
+                                <button className="l-next" onClick={this.next}>Next</button></Link>
                         </div>
                     </div>
                 </div>
