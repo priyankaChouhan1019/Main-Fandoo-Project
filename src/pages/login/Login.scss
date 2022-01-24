@@ -10,120 +10,107 @@ $color-primary :#1a73e8;
      padding: 20px 40px 20px 40px; 
      border: $contenborder;
      border-radius: 5px;
-     margin-top: 100px;
-    
+     margin-top: 100px;   
 }
 
-
-.main-page{
-    width: 100%;
-    margin: 15vh 0vw;
-    justify-content: center;
-
-
-.page-container{  
-    @include pagecontent();
-
-.login-title{
-    display: flex;
-    font-size: 25px;
-    justify-content: center;
-    margin-bottom: 10px;
-    
-} 
-
-.sign-in{
-    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.3333;
+@mixin login-desp {
     margin : -1vh 0vw 3vh 0vw;
+    font-weight: 400;   
 }
 
-.account{
-    /* background-color: black; */
-    margin: -1vh 0vw 3vh 0vw;
-    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
-    color: $black-colors;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 0.1px;
-}
-
-.email-row{
-    font-size: 0px;
-    padding: 0px ;
-}
-#forgotEmail{
+@mixin forgot {
     font-size: 14px;
     color: $color-primary ;
     text-align: left;
     cursor: pointer;
     font-weight: 500;
-    margin: -0vh 0vw 2vh 0vw;
-    
+    margin: -0vh 0vw 2vh 0vw;  
 }
 
-#forgotPassword{
-    font-size: 14px;
-    color: $color-primary;
-    text-align: left;
-    cursor: pointer;
-    margin: -0vh 0vw 2vh 0vw;
-    
-    /* display: inline-block; */
-    font-weight: 500;
-}
-
-.text{
-    margin: 5vh 0vw 3vh 0vw;
-    font-size: 15px;
-    display: flex;
-}
-
-.learnmore{
-    color: $color-primary;
-    display: flex;
-    margin-top: -10px;
-}
-
-.create{
-    display: flex;
-    /* margin: 0vh 2vw;
-    margin-top: 30px; */
-    justify-content: space-between;
+.main-page{
     width: 100%;
-}
-
-.l-text{
-    color:#1a73e8;
-    /* align-items: center; */
-    /* justify-content: center; */
-    font-size: 15px;
-}
-
-
- .l-next{
-    color: whitesmoke;
-    /* align-items: center; */
-    /* justify-content: center; */
-     margin: 0vh 2vw; 
-    background-color: #1a73e8;
-    padding: 10px;
-    border: none;
-} 
-
-.last-section{
-       /* margin: 2vh 0vw 0vh 10vw;    */
-       direction: rtl; 
-}
-
-@media only screen and (max-width:600) {
-    .page-container{
-        border: none;
-        width: 100%;
-    }
+    margin: 15vh 0vw;
+    justify-content: center;
     
-}
-}
+    .page-container{  
+         @include pagecontent();
+    
+        .login-title{
+            display: flex;
+            font-size: 25px;
+            justify-content: center;
+            margin-bottom: 10px;
+        } 
+
+        .sign-in{
+            font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+            font-size: 24px;
+            line-height: 1.3333;
+            @include login-desp();
+        }
+
+        .account{    
+            font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+            color: $black-colors;
+            font-size: 16px;
+            letter-spacing: 0.1px;
+            @include login-desp();
+        }
+
+        .email-row{
+            font-size: 0px;
+            padding: 0px ;
+        }
+
+        #forgotEmail{
+            @include forgot();    
+        }
+
+        #forgotPassword{
+            @include forgot();
+        }
+
+        .text{
+            margin: 5vh 0vw 3vh 0vw;
+            font-size: 15px;
+            display: flex;
+        }
+
+        .learnmore{
+            color: $color-primary;
+            display: flex;
+            margin-top: -10px;
+        }
+
+        .create{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .l-text{
+            color:$color-primary;
+            font-size: 15px;
+        }
+
+        .l-next{
+            color: whitesmoke;
+            margin: 0vh 2vw; 
+            background-color: $color-primary;
+            padding: 10px;
+            border: none;
+        } 
+
+        .last-section{
+            direction: rtl; 
+        }
+
+        @media only screen and (max-width:600) {
+            .page-container{
+                border: none;
+                width: 100%;
+            }
+            
+        }
+    }
 }
