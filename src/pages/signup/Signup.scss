@@ -9,7 +9,7 @@
 
     .main-container{
         height: auto;
-        width: 50%;
+        width: 60%;
         padding: 20px 40px 36px 40px;
         align-items: center;
         border: 1px solid lightgray;
@@ -44,7 +44,6 @@
                 
                         .first-names{
                             width: 48%;
-                            // margin: 0vh -10vw;
                             
                         }
 
@@ -56,7 +55,7 @@
                 .user-row{
                     display: flex; 
                     width: 100%;
-                    font-size: 22px;
+                    font-size: 22px;                   
                 }
 
                 .use_current{
@@ -151,52 +150,72 @@
                 }
         }
 
+        @media only screen and (max-width:900px) {
+   
+            .logo1{  
+                display: none;
+            }
+        
+            .right-part{
+                width:0%;
+            }
+        
+            .logo-text{
+                display: none;
+            }
+        
+            .left-part{
+                width: 100%;
+                  height: auto;
+            }
+            
+        }
+
+ 
     }
+
+
 }
-
-@media only screen and (max-width:900px) {
-    
-    .logo1{  
-        display: none;
-    }
-
-    .right-part{
-        width:0%;
-    }
-
-    .logo-text{
-        display: none;
-    }
-
-    .left-part{
-        width: 100%;
-          height: auto;
-    }
-    
-}
+           
 @media only screen and (max-width:600px){
+   
     .main-page{
-        border: none;
-    }
 
-    .name-row{
-    display: flex;
-    flex-direction: column;
-    }
+        .main-container{
+         border: none;
+         margin-top: 150px;
+         
+         .fandoo{
+             justify-content: center;
+         }
 
-    .user-row{
-        width: 100%;
-        display: flex;
+         .heading {
+             justify-content: left;      
+         }
+     }
     }
-
-    .password-row{
-        display: flex;
-        flex-direction: column;
-    }
-
-    #outlined-basic{
-        width: 300px;
-        height: 8px;
-    }
-    
-}
+ 
+     .name-row{
+     display: flex;
+     flex-direction: column;
+     }
+ 
+     .user-row{
+         display: flex;
+         flex-direction:row ;
+         width: 100%;
+     }
+ 
+     .password-row{
+         display: flex;
+         flex-direction: column;
+     }
+ 
+     #outlined-basic{
+         width: 300px;
+         height: 8px;
+     }
+     
+ }
+ 
+ 

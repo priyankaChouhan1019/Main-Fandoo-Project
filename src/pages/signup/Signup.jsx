@@ -83,7 +83,7 @@ export class Signup extends Component {
                     <div className="left-part">
                         <div className="fandoo">
                             <p style={{ color: 'blue' }} >F</p>
-                            <p style={{ color: 'red' }}>a</p>
+                            <p style={{ color: 'red' }}>u</p>
                             <p style={{ color: 'yellow' }}>n</p>
                             <p style={{ color: 'blue' }}>d</p>
                             <p style={{ color: 'green' }}>o</p>
