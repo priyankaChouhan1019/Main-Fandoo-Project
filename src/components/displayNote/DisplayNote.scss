@@ -7,20 +7,18 @@
 
     .display-box{
         margin: 15px;
-        display: flex;
         width: 240px;
         height: 120px;
         box-shadow: -1px -1px 5px gray;
         border: lightgray;
         border-radius: 6px;
-      display: flex;
     }
 
-    input{
+   .descp-title{
         outline: none;
         border: none;
         width: 75%;
-        height: 45%;
+        height: 50%;
 
     }
 
@@ -29,17 +27,13 @@
         display: flex;
         justify-content: space-between;
        
-        // .icons-list{
-        //     width: 100%;
-        //     display: flex;
-        //     justify-content: space-around;
-           
-        // }
     }
     
 
     }
     .close-Icon{
         display: flex;
+        margin: 0vh -4vw;
     
 }
+

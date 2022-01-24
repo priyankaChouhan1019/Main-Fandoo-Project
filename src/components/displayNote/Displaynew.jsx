@@ -10,6 +10,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
+import Button from '@mui/material/Button';
+
 
 
 
@@ -41,7 +43,7 @@ const BootstrapDialogTitle = (props) => {
                         color: (theme) => theme.palette.grey[500],
                     }}
                 >
-                    <CloseIcon />
+                    {/* <CloseIcon /> */}
                 </IconButton>
             ) : null}
         </DialogTitle>
@@ -94,18 +96,19 @@ export class DisplayNote extends Component {
 
             <div className="disp-container">
                 {this.props.notesArray.map((item, index) => (
-                    <div className="display-box" onClick={() => this.handleOpenTitle(item)}>
-                        <div >
+                    <div className="display-box">
+                        <div className="descp-title"  onClick={() => this.handleOpenTitle(item)}>
                             {item.title}<br></br>
                             {item.description}
-                            <div className="disp-icons">
-                                <div className="icons-list">
+                            {/* <div className="disp-icons"> */}
+                               
+                            {/* </div> */}
+                            
+                        </div>
+                        <div className="icons-list">
                                     <Icons />
 
                                 </div>
-                            </div>
-                            
-                        </div>
                        
                     </div>
                 ))}
@@ -125,7 +128,9 @@ export class DisplayNote extends Component {
                         <DialogContent className="close-Icon" >
 
                             <Icons />
-                            <button autoFocus onClick={(title, description) => this.handleClose(title, description)}> Close</button>
+                            {/* <button autoFocus onClick={(title, description) => this.handleClose(title, description)}> Close</button> */}
+                            <Button autoFocus onClick={(title, description) => this.handleClose(title, description)}> Close </Button>
+                      
                         </DialogContent>
 
                     </div>

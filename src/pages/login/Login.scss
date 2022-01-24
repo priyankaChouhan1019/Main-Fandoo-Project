@@ -1,18 +1,28 @@
+$contenborder :1px solid lightgray;
+$black-colors :#202124;
+$color-primary :#1a73e8;
+
+
+@mixin pagecontent {
+    padding: 1.5vh;
+    width: 30%;
+     height: 80vh; 
+     padding: 20px 40px 20px 40px; 
+     border: $contenborder;
+     border-radius: 5px;
+     margin-top: 100px;
+    
+}
+
+
 .main-page{
     width: 100%;
     margin: 15vh 0vw;
     justify-content: center;
 
 
-.page-container{
-    padding: 1.5vh;
-    width: 30%;
-     height: 80vh; 
-     padding: 20px 40px 20px 40px; 
-     border: 1px solid lightgray;
-     border-radius: 5px;
-     margin-top: 100px;
-
+.page-container{  
+    @include pagecontent();
 
 .login-title{
     display: flex;
@@ -32,9 +42,9 @@
 
 .account{
     /* background-color: black; */
-    margin: -1vh 0vw 8vh 0vw;
+    margin: -1vh 0vw 3vh 0vw;
     font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
-    color: #202124;
+    color: $black-colors;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.1px;
@@ -45,23 +55,22 @@
     padding: 0px ;
 }
 #forgotEmail{
-    /* padding-bottom: 3px;
-    padding-top: 9px; */
     font-size: 14px;
-    color: #1a73e8;
+    color: $color-primary ;
     text-align: left;
     cursor: pointer;
-    /* display: inline-block; */
     font-weight: 500;
     margin: -0vh 0vw 2vh 0vw;
+    
 }
 
 #forgotPassword{
     font-size: 14px;
-    color: #1a73e8;
+    color: $color-primary;
     text-align: left;
     cursor: pointer;
-    margin: -0vh 0vw 0vh 0vw;
+    margin: -0vh 0vw 2vh 0vw;
+    
     /* display: inline-block; */
     font-weight: 500;
 }
@@ -73,7 +82,7 @@
 }
 
 .learnmore{
-    color: #1a73e8;
+    color: $color-primary;
     display: flex;
     margin-top: -10px;
 }
