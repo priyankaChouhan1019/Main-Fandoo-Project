@@ -17,7 +17,8 @@ export class TakeNote extends Component {
       open: true,
       title: '',
       description: '',
-      color:'#ffffff'
+      color:'#ffffff',
+      archive:false
     }
   }
 
@@ -29,15 +30,21 @@ export class TakeNote extends Component {
 
   handleClose = () => {
 
-    let data = {
-      "title": this.state.title,
-      "description": this.state.description,
-      "color":this.state.color
+    // let data = {
+    //   "title": this.state.title,
+    //   "description": this.state.description,
+    //   "color":this.state.color
       
-    }
+    // }
+
+    const formData = new FormData();
+        formData.append("title",this.state.title)
+        formData.append("description",this.state.description)
+        formData.append("color",this.state.color)
+        formData.append("isArchived",this.state.archive)
 
     
-    noteService.addNote(data)
+    noteService.addNote(formData)
       .then(res => {
         // refreshDisplaynote
         this.props.refreshDispNote(); 
@@ -45,7 +52,8 @@ export class TakeNote extends Component {
           open: true,
           title: '',
           description: '',
-          color:'#ffffff'
+          color:'#ffffff',
+          archive:false
         })
       })
       .catch(err =>{
@@ -64,6 +72,12 @@ export class TakeNote extends Component {
     this.setState({
         color: val
     })
+}
+
+archivebtn=(val)=>{
+  this.setState({
+      archive: val
+  })
 }
 
   render() {
@@ -86,7 +100,7 @@ export class TakeNote extends Component {
 
               <div className="discp-icons">
                 <div className="icon-list">
-                  <Icons changeColor={this.changeColor} />
+                  <Icons changeColor={this.changeColor} archivebtn={this.archivebtn} />
                 </div>
                 <button onClick={this.handleClose}>close</button>
               </div>

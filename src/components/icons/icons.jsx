@@ -57,6 +57,10 @@ export class Icons extends Component {
     this.props.changeColor(storeclr);
   }
 
+  checkArchive=()=>{
+    this.props.archivebtn(true)
+  }
+
   render() {
     //popover
     const { anchorEl, color1 } = this.state
@@ -93,8 +97,9 @@ export class Icons extends Component {
         </div>
 
         <PhotoOutlinedIcon />
-        <ArchiveOutlinedIcon />
-
+        <div>
+        <ArchiveOutlinedIcon onClick={(e)=>this.checkArchive(e)}/>
+        </div>
         <div>
           <MoreVertOutlinedIcon onClick={this.handleClick} />
           <Popover
