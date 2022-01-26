@@ -29,6 +29,7 @@ $borderColor :lightgray;
     input{
         width: 70%;
         @include noneStyle(); 
+
             
     }
 
@@ -51,6 +52,7 @@ $borderColor :lightgray;
        @include noneStyle();
         width: 100%;
         height: 45%;
+        background-color: inherit;
 
     }
 

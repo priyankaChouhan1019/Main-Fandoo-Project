@@ -163,8 +163,6 @@ export default function MiniDrawer() {
             <RefreshOutlinedIcon />
             <ViewStreamOutlinedIcon />
             <SettingsOutlinedIcon />
-
-
             <AppsOutlinedIcon />
             <AccountCircleOutlinedIcon />
 

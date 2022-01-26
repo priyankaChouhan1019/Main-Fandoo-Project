@@ -82,8 +82,9 @@ export class Icons extends Component {
 
                 {
                             colorsArray.map((item, index) => (
-                                <div className="colorPallets" style={{backgroundColor:item}}>
-                                        {item}
+                                <div className="colorPallets"  onClick={() =>this.color(item)}
+                                style={{backgroundColor:item}}>
+                                        {item.backgroundColor}
                                 </div>
                             ))
                         }

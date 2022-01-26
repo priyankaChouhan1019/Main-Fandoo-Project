@@ -36,12 +36,7 @@ export class TakeNote extends Component {
       
     }
 
-    // changeColor =(val)=>{
-    //   this.setState({
-    //   color:val
-    //   })
-    // }
-
+    
     noteService.addNote(data)
       .then(res => {
         // refreshDisplaynote
@@ -50,7 +45,7 @@ export class TakeNote extends Component {
           open: true,
           title: '',
           description: '',
-          colors:'#ffffff'
+          color:'#ffffff'
         })
       })
       .catch(err =>{
@@ -64,6 +59,12 @@ export class TakeNote extends Component {
       [e.target.name]: e.target.value
     })
   }
+
+  changeColor=(val)=>{
+    this.setState({
+        color: val
+    })
+}
 
   render() {
     return (
@@ -79,7 +80,7 @@ export class TakeNote extends Component {
               </div>    
             </div>
             :
-            <div className="discp-container" style={{backgroundColor:"this.state.color"}}>
+            <div className="discp-container" style={{backgroundColor:this.state.color}}>
               <input type="text" name="title" placeholder='Take a Note' onChange={(e) => this.getNotesChange(e)} />
               <input type="text" name="description" placeholder='Discription' onChange={(e) => this.getNotesChange(e)} />
 
@@ -89,7 +90,6 @@ export class TakeNote extends Component {
                 </div>
                 <button onClick={this.handleClose}>close</button>
               </div>
-
             </div>
            
         }
