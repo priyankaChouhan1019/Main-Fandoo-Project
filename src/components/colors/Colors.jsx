@@ -5,7 +5,7 @@ export class Colors extends Component {
   render() {
     return (
       <div>
-        <div className="iconColor">
+        <div className="iconColor" >
                     <div className="red"></div>
                     <div className="orange"></div>
                     <div className="yellow"></div>

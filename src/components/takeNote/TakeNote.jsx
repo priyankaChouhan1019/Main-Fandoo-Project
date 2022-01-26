@@ -16,7 +16,8 @@ export class TakeNote extends Component {
     this.state = {
       open: true,
       title: '',
-      description: ''
+      description: '',
+      color:'#ffffff'
     }
   }
 
@@ -30,8 +31,16 @@ export class TakeNote extends Component {
 
     let data = {
       "title": this.state.title,
-      "description": this.state.description
+      "description": this.state.description,
+      "color":this.state.color
+      
     }
+
+    // changeColor =(val)=>{
+    //   this.setState({
+    //   color:val
+    //   })
+    // }
 
     noteService.addNote(data)
       .then(res => {
@@ -40,7 +49,8 @@ export class TakeNote extends Component {
         this.setState({
           open: true,
           title: '',
-          description: ''
+          description: '',
+          colors:'#ffffff'
         })
       })
       .catch(err =>{
@@ -66,16 +76,16 @@ export class TakeNote extends Component {
                 <AssignmentTurnedInOutlinedIcon />
                 <BrushOutlinedIcon />
                 <InsertPhotoOutlinedIcon />
-              </div>
+              </div>    
             </div>
             :
-            <div className="discp-container">
+            <div className="discp-container" style={{backgroundColor:"this.state.color"}}>
               <input type="text" name="title" placeholder='Take a Note' onChange={(e) => this.getNotesChange(e)} />
               <input type="text" name="description" placeholder='Discription' onChange={(e) => this.getNotesChange(e)} />
 
               <div className="discp-icons">
                 <div className="icon-list">
-                  <Icons />
+                  <Icons changeColor={this.changeColor} />
                 </div>
                 <button onClick={this.handleClose}>close</button>
               </div>

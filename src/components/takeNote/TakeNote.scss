@@ -28,7 +28,8 @@ $borderColor :lightgray;
  
     input{
         width: 70%;
-        @include noneStyle();      
+        @include noneStyle(); 
+            
     }
 
     .title-icons{

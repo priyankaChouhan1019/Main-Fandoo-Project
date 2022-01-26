@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import '../icons/Icons.scss'
+import TakeNote from '../takeNote/TakeNote';
+
 import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
@@ -13,6 +15,12 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Popover } from '@material-ui/core';
 import Colors from '../colors/Colors';
+
+let colorsArray = [
+  "#f28b82", "#fbbc04", "#fff475", "#ccff90",
+  "#a7ffeb", "#cbf0f8", "#aecbfa", "#d7aefb",
+  "#fdcfe8", "#e6c9a8", "#e8eaed", "#aecbfa"
+]
 
 
 export class Icons extends Component {
@@ -45,6 +53,10 @@ export class Icons extends Component {
     })
   }
 
+  color=(storeclr)=>{
+    this.props.changeColor(storeclr);
+  }
+
   render() {
     //popover
     const { anchorEl, color1 } = this.state
@@ -54,6 +66,7 @@ export class Icons extends Component {
         <AddAlertOutlinedIcon />
         <PersonAddAltOutlinedIcon />
         <div>
+          {/* //oncick={this.color('#ffffff)} */}
           <ColorLensOutlinedIcon onClick={(e) => this.colorOpen(e)} />
           <Popover
                         id="simple-menu"
@@ -66,7 +79,15 @@ export class Icons extends Component {
                             horizontal: "left"
                         }}
                     >
-                        <Colors/>
+
+                {
+                            colorsArray.map((item, index) => (
+                                <div className="colorPallets" style={{backgroundColor:item}}>
+                                        {item}
+                                </div>
+                            ))
+                        }
+                        {/* <Colors/> */}
                     </Popover>
         </div>
 

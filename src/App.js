@@ -13,18 +13,7 @@ import Forgot from './pages/forget-email/Forgot';
 import ResetPass from './pages/reset_pass/ResetPass';
 import Dashboard from './pages/dashboard/Dashboard';
 
-//router
-import React, { useState } from 'react';
 function App() {
-
-  //router
-  const [user, setUser] = useState(false)
-
-  const handleLogin = e => {
-    e.preventDefault();
-    setUser(true);
-  }
-
   return (
        <BrowserRouter>
           <Switch>
