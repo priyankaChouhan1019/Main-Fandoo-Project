@@ -55,7 +55,7 @@ export class Icons extends Component {
   color = (storeclr) => {
     // this.props.changeColor(storeclr);
     console.log("in else")
-    // update-part
+    // updatecolor
     let data ={
         "noteIdList":[this.props.noteId],
         "color":storeclr
@@ -99,6 +99,28 @@ export class Icons extends Component {
             })
         }
   }
+
+  handleDelete =() =>{
+    console.log("Delete")
+        // delete-data
+        let data ={
+            "noteIdList":[this.props.noteId],
+            "isDeleted": false
+        }
+        service.deleteNote(data)
+        .then(res =>{
+            console.log(res)
+        })
+        .catch(err =>{
+            console.log( "U have an Error ->" + err)
+        })
+}
+
+handleDeleteClose= () => {
+    this.setState({
+        anchorEl: false,
+    })
+}
 
 
   render() {
@@ -153,7 +175,8 @@ export class Icons extends Component {
               horizontal: "left"
             }}
           >
-            <MenuItem onClick={this.handleClose}>Delete note</MenuItem>
+            {/* <MenuItem onClick={this.handleClose}>Delete note</MenuItem> */}
+            <MenuItem onClick={(e)=>this.handleDelete(e)}>Delete note</MenuItem>
             <MenuItem onClick={this.handleClose}>Add label</MenuItem>
             <MenuItem onClick={this.handleClose}>Add drawing</MenuItem>
             <MenuItem onClick={this.handleClose}>Make a copy</MenuItem>

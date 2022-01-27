@@ -29,6 +29,10 @@ class NoteService {
     archiveChange(data){
       return service.postMethod(`${baseUrl}notes/archiveNotes`,data,headerConfig)
     }
+
+    deleteNote(data){
+      return service.postMethod(`${baseUrl}notes/trashNotes`,data,headerConfig)
+    }
   
 
 }
