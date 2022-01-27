@@ -26,7 +26,7 @@ $icon1Color : #777777;
     justify-content: space-around;
     height: 60px;
     align-items: center;
-}
+
 
 .search-bar{
     @include searchBar();
@@ -41,16 +41,31 @@ $icon1Color : #777777;
     }
 }
 
+
 .nav-right-icon{
      width: 15%;
      display: flex;
      justify-content:space-between;
      align-items: center;
 }
+}
+
+
+
+@media only screen and (max-width:600px){
+    .heaadbar{
+    .search-bar{
+        display:none;
+        width: 0%;
+    }
+    .nav-right-icon{
+        width: 30%;
+    }
+}
     
-// .nav-icon{
-//     display:flex;
-// }
+}
+    
+
 
 
 

@@ -70,12 +70,31 @@ $borderColor :lightgray;
         }
     }
 }
+}
+@media only screen and (max-width:900px){
+    .take-container{
+    .title-container{    
+        justify-content: center;
+     
+    }
+}
 
 }
-// @media screen  and (max-width :600){
-//     .title-container{
-//         width: 280px;
-//         margin: 0%;
-//     }
-    
-// }
+@media only screen and (max-width:600px){
+    .take-container{
+    .title-container{    
+        display: flex;
+        width: 60%;
+    }
+}
+}
+
+@media only screen and (max-width:470px){
+    .take-container{
+        .title-container{    
+            display: flex;
+            width: 70%;
+        }
+    } 
+
+}

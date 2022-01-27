@@ -18,7 +18,10 @@
         outline: none;
         border: none;
         width: 75%;
-        height: 50%;
+        // height: 50%;
+        height: 60%;
+        margin-left: 6px;
+        line-height: 2.2;
 
     }
 
@@ -35,5 +38,36 @@
         display: flex;
         margin: 0vh -4vw;
     
+}
+
+@media only screen and (max-width:900px){
+    .disp-container{
+        grid-template-columns: repeat(2,1fr);   
+    
+    .display-box{
+        width: 250px;
+    }
+}
+}
+
+@media only screen and (max-width:600px){
+    .disp-container{
+        grid-template-columns: repeat(2,1fr);   
+    
+    .display-box{
+        width: 160px;
+    }
+}
+}
+
+
+@media only screen and (max-width:470px){
+    .disp-container{
+        grid-template-columns: repeat(1,1fr);   
+    
+    .display-box{
+        width: 250px;
+    }
+}
 }
 
