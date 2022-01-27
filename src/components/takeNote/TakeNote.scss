@@ -47,6 +47,7 @@ $borderColor :lightgray;
     flex-direction: column;
     width: 50%;
     height: 120px;
+    background-color: inherit;
 
     input{
        @include noneStyle();

@@ -22,6 +22,15 @@ class NoteService {
   
   }
 
+  changeColor(data){
+      return service.postMethod(`${baseUrl}notes/changesColorNotes`,data,headerConfig)
+    }
+
+    archiveChange(data){
+      return service.postMethod(`${baseUrl}notes/archiveNotes`,data,headerConfig)
+    }
+  
+
 }
 
 

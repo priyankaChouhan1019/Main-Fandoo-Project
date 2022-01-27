@@ -100,7 +100,7 @@ archivebtn=(val)=>{
 
               <div className="discp-icons">
                 <div className="icon-list">
-                  <Icons changeColor={this.changeColor} archivebtn={this.archivebtn} />
+                  <Icons changeColor={this.changeColor} archivebtn={this.archivebtn} mode="create" />
                 </div>
                 <button onClick={this.handleClose}>close</button>
               </div>

@@ -27,6 +27,11 @@ class UserService{
         return service.postMethod(`${baseurl}user/reset-password`,data,headers)
       }
 
+    
+
+    // archiveChange(data){
+    //   return service.postMethod(`${baseurl}notes/archiveNotes`,data,headers)
+    // }
   
 }
 

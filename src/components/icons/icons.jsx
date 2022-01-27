@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../icons/Icons.scss'
 import TakeNote from '../takeNote/TakeNote';
+import NoteService from '../../service/notesservice';
 
 import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
@@ -22,6 +23,8 @@ let colorsArray = [
   "#fdcfe8", "#e6c9a8", "#e8eaed", "#aecbfa"
 ]
 
+//  const service = new UserService();
+const service = new NoteService();
 
 export class Icons extends Component {
 
@@ -53,13 +56,33 @@ export class Icons extends Component {
     })
   }
 
-  color=(storeclr)=>{
+  color = (storeclr) => {
     this.props.changeColor(storeclr);
   }
 
-  checkArchive=()=>{
-    this.props.archivebtn(true)
+  checkArchive = () => {
+    // this.props.archivebtn(true)
+
+        if(this.mode === "create"){
+        this.props.archivebtn(true)
+        }
+        else{
+            console.log("in else")
+            // update-part
+            let data ={
+                "noteIdList":[this.props.noteId],
+                "isArchived": true
+            }
+            service.archiveChange(data)
+            .then(res =>{
+                console.log(res)
+            })
+            .catch(err =>{
+                console.log( "here is error" + err)
+            })
+        }
   }
+
 
   render() {
     //popover
@@ -73,32 +96,32 @@ export class Icons extends Component {
           {/* //oncick={this.color('#ffffff)} */}
           <ColorLensOutlinedIcon onClick={(e) => this.colorOpen(e)} />
           <Popover
-                        id="simple-menu"
-                        anchorEl={color1}
-                        keepMounted
-                        open={Boolean(color1)}
-                        onClose={this.colorClose}
-                        anchorOrigin={{
-                            vertical: "bottom",
-                            horizontal: "left"
-                        }}
-                    >
+            id="simple-menu"
+            anchorEl={color1}
+            keepMounted
+            open={Boolean(color1)}
+            onClose={this.colorClose}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left"
+            }}
+          >
 
-                {
-                            colorsArray.map((item, index) => (
-                                <div className="colorPallets"  onClick={() =>this.color(item)}
-                                style={{backgroundColor:item}}>
-                                        {item.backgroundColor}
-                                </div>
-                            ))
-                        }
-                        {/* <Colors/> */}
-                    </Popover>
+            {
+              colorsArray.map((item, index) => (
+                <div className="colorPallets" onClick={() => this.color(item)}
+                  style={{ backgroundColor: item }}>
+                  {item.backgroundColor}
+                </div>
+              ))
+            }
+            {/* <Colors/> */}
+          </Popover>
         </div>
 
         <PhotoOutlinedIcon />
         <div>
-        <ArchiveOutlinedIcon onClick={(e)=>this.checkArchive(e)}/>
+          <ArchiveOutlinedIcon onClick={(e) => this.checkArchive(e)} />
         </div>
         <div>
           <MoreVertOutlinedIcon onClick={this.handleClick} />

@@ -106,7 +106,7 @@ export class DisplayNote extends Component {
                             
                         </div>
                         <div className="icons-list">
-                                    <Icons />
+                                    <Icons  mode="update"  noteId={item.id} />
 
                                 </div>
                        
@@ -127,7 +127,7 @@ export class DisplayNote extends Component {
                         </DialogContent>
                         <DialogContent className="close-Icon" >
 
-                            <Icons />
+                            <Icons/>
                             {/* <button autoFocus onClick={(title, description) => this.handleClose(title, description)}> Close</button> */}
                             <Button autoFocus onClick={(title, description) => this.handleClose(title, description)}> Close </Button>
                       
