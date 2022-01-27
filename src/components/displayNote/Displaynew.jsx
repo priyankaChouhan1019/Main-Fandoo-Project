@@ -61,8 +61,8 @@ export class DisplayNote extends Component {
         this.state = {
             open: false,
             title: this.props.notesArray.title,
-            description: this.props.notesArray.description
-
+            description: this.props.notesArray.description,
+            color: this.props.color
             
         };
     }
@@ -96,18 +96,14 @@ export class DisplayNote extends Component {
 
             <div className="disp-container">
                 {this.props.notesArray.map((item, index) => (
-                    <div className="display-box">
+                    <div className="display-box"  style={{backgroundColor:item.color}}>
                         <div className="descp-title"  onClick={() => this.handleOpenTitle(item)}>
                             {item.title}<br></br>
                             {item.description}
-                            {/* <div className="disp-icons"> */}
-                               
-                            {/* </div> */}
                             
                         </div>
                         <div className="icons-list">
                                     <Icons  mode="update"  noteId={item.id} />
-
                                 </div>
                        
                     </div>

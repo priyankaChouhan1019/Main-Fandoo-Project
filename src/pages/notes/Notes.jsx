@@ -39,9 +39,7 @@ gettheNotes = () => { //for refresh display
       <div  className="note-box">
 
 
-         {/* <TakeNote /> */}
          <TakeNote refreshDispNote ={this.gettheNotes}/>
-         {/* <DisplayNote notesArray ={this.state.noteArr}/> */}
          <Displaynew notesArray ={this.state.noteArr}/>
       </div>
     )

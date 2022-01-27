@@ -17,8 +17,8 @@ export class TakeNote extends Component {
       open: true,
       title: '',
       description: '',
-      color:'#ffffff',
-      archive:false
+      color: '#ffffff',
+      archive: false
     }
   }
 
@@ -29,34 +29,33 @@ export class TakeNote extends Component {
   }
 
   handleClose = () => {
-
     // let data = {
     //   "title": this.state.title,
     //   "description": this.state.description,
     //   "color":this.state.color
-      
+
     // }
 
     const formData = new FormData();
-        formData.append("title",this.state.title)
-        formData.append("description",this.state.description)
-        formData.append("color",this.state.color)
-        formData.append("isArchived",this.state.archive)
+    formData.append("title", this.state.title)
+    formData.append("description", this.state.description)
+    formData.append("color", this.state.color)
+    formData.append("isArchived", this.state.archive)
 
-    
+
     noteService.addNote(formData)
       .then(res => {
         // refreshDisplaynote
-        this.props.refreshDispNote(); 
+        this.props.refreshDispNote();
         this.setState({
           open: true,
           title: '',
           description: '',
-          color:'#ffffff',
-          archive:false
+          color: '#ffffff',
+          archive: false
         })
       })
-      .catch(err =>{
+      .catch(err => {
         console.log(err)
       })
 
@@ -68,17 +67,17 @@ export class TakeNote extends Component {
     })
   }
 
-  changeColor=(val)=>{
+  changeColor = (val) => {
     this.setState({
-        color: val
+      color: val
     })
-}
+  }
 
-archivebtn=(val)=>{
-  this.setState({
+  archivebtn = (val) => {
+    this.setState({
       archive: val
-  })
-}
+    })
+  }
 
   render() {
     return (
@@ -91,10 +90,10 @@ archivebtn=(val)=>{
                 <AssignmentTurnedInOutlinedIcon />
                 <BrushOutlinedIcon />
                 <InsertPhotoOutlinedIcon />
-              </div>    
+              </div>
             </div>
             :
-            <div className="discp-container" style={{backgroundColor:this.state.color}}>
+            <div className="discp-container" style={{ backgroundColor: this.state.color }}>
               <input type="text" name="title" placeholder='Take a Note' onChange={(e) => this.getNotesChange(e)} />
               <input type="text" name="description" placeholder='Discription' onChange={(e) => this.getNotesChange(e)} />
 
@@ -105,10 +104,10 @@ archivebtn=(val)=>{
                 <button onClick={this.handleClose}>close</button>
               </div>
             </div>
-           
+
         }
-         </div>
-      
+      </div>
+
     )
   }
 }

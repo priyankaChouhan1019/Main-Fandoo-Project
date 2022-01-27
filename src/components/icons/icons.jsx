@@ -50,14 +50,31 @@ export class Icons extends Component {
     })
   }
 
+ 
+
+  color = (storeclr) => {
+    // this.props.changeColor(storeclr);
+    console.log("in else")
+    // update-part
+    let data ={
+        "noteIdList":[this.props.noteId],
+        "color":storeclr
+    }
+    service.changeColor(data)
+    .then(res =>{
+        console.log(res)
+        
+    })
+    .catch(err =>{
+        console.log( "color err" + err)
+    })
+
+  }
+  
   colorClose = () => {
     this.setState({
       color1: false
     })
-  }
-
-  color = (storeclr) => {
-    this.props.changeColor(storeclr);
   }
 
   checkArchive = () => {
@@ -94,7 +111,7 @@ export class Icons extends Component {
         <PersonAddAltOutlinedIcon />
         <div>
           {/* //oncick={this.color('#ffffff)} */}
-          <ColorLensOutlinedIcon onClick={(e) => this.colorOpen(e)} />
+          <ColorLensOutlinedIcon onClick={(e) => this.colorOpen(e)}/>
           <Popover
             id="simple-menu"
             anchorEl={color1}
