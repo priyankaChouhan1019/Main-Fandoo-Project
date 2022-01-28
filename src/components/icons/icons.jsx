@@ -50,11 +50,14 @@ export class Icons extends Component {
     })
   }
 
- 
 
   color = (storeclr) => {
-    // this.props.changeColor(storeclr);
-    console.log("in else")
+    
+    if(this.props.mode === "create"){
+       this.props.changeColor(storeclr);
+      }
+      else{
+    
     // updatecolor
     let data ={
         "noteIdList":[this.props.noteId],
@@ -68,6 +71,7 @@ export class Icons extends Component {
     .catch(err =>{
         console.log( "color err" + err)
     })
+  }
 
   }
   
@@ -85,7 +89,7 @@ export class Icons extends Component {
         }
         else{
             console.log("in else")
-            // update-part
+            // api for update-part
             let data ={
                 "noteIdList":[this.props.noteId],
                 "isArchived": true
@@ -112,7 +116,7 @@ export class Icons extends Component {
             console.log(res)
         })
         .catch(err =>{
-            console.log( "U have an Error ->" + err)
+            console.log( "Error" + err)
         })
 }
 

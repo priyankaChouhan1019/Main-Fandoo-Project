@@ -43,19 +43,25 @@
 @media only screen and (max-width:900px){
     .disp-container{
         grid-template-columns: repeat(2,1fr);   
+        width: 100%;
     
     .display-box{
-        width: 250px;
+        width: 230px;
+        margin: 15px auto;
     }
 }
 }
 
 @media only screen and (max-width:600px){
     .disp-container{
-        grid-template-columns: repeat(2,1fr);   
-    
+        grid-template-columns: repeat(1,1fr); 
+        justify-content: center;  
+        width: 100%;
+          
     .display-box{
-        width: 160px;
+        width: 300px;
+        margin: 15px auto;
+
     }
 }
 }
@@ -64,9 +70,11 @@
 @media only screen and (max-width:470px){
     .disp-container{
         grid-template-columns: repeat(1,1fr);   
+        width: 100%;
     
     .display-box{
         width: 250px;
+        margin: 15px auto;
     }
 }
 }

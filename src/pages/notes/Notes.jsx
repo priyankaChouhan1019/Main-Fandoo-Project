@@ -18,6 +18,7 @@ export class Notes extends Component {
 
   componentDidMount() {
     this.gettheNotes();
+    this.updateDiplayNote();
 }
 
 gettheNotes = () => { //for refresh display
@@ -34,13 +35,26 @@ gettheNotes = () => { //for refresh display
 
         })
 }
+
+updateDiplayNote=()=>{
+  noteService.getNote()
+  .then(res =>{
+      this.setState({
+          noteArr:res.data.data.data
+      })
+      console.log(res)
+  })
+  .catch(err =>{
+      console.log(err)
+  })
+}
   render() {
     return (
       <div  className="note-box">
 
 
-         <TakeNote refreshDispNote ={this.gettheNotes}/>
-         <Displaynew notesArray ={this.state.noteArr}/>
+         <TakeNote refreshDispNote ={this.gettheNotes} />
+         <Displaynew notesArray ={this.state.noteArr} updateDiplayNote={this.updateDiplayNote}/>
       </div>
     )
   }
