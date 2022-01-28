@@ -107,8 +107,6 @@ export class DisplayNote extends Component {
 
     }
 
-
-
     howerTitleDesc = (e) => {
         this.setState({
             [e.target.name]: e.target.value

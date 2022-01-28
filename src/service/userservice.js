@@ -4,6 +4,17 @@ const service = new AxiosService();
 
 let baseurl='http://fundoonotes.incubation.bridgelabz.com/api/';
 
+//spliturl
+const url = window.location.href.toString().split('/resetpassword/');
+console.log(url[1]);
+
+let urlheader={
+    headers:{
+        Authorization:url[1]
+    }
+}
+
+
 let headers={
     headers:{
       Authorization:localStorage.getItem("token")
@@ -24,7 +35,7 @@ class UserService{
     }
 
     reset(data) {
-        return service.postMethod(`${baseurl}user/reset-password`,data,headers)
+        return service.postMethod(`${baseurl}user/reset-password`,data,urlheader);
       }
 
     

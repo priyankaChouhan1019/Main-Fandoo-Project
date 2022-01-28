@@ -16,11 +16,15 @@ class NoteService {
       return service.postMethod(`${baseUrl}notes/addNotes`,data,headerConfig)
       
   }
-
+//spliturl
   getNote(){
-    return service.getMethod(`${baseUrl}notes/getNotesList`,headerConfig)
+    return service.getMethod(`${baseUrl}notes/getNotesList?access_token=`+headerConfig.headers.Authorization);
+}
+
+  // getNote(){
+  //   return service.getMethod(`${baseUrl}notes/getNotesList`,headerConfig)
   
-  }
+  // }
 
   changeColor(data){
       return service.postMethod(`${baseUrl}notes/changesColorNotes`,data,headerConfig)
@@ -33,8 +37,16 @@ class NoteService {
     deleteNote(data){
       return service.postMethod(`${baseUrl}notes/trashNotes`,data,headerConfig)
     }
-  
 
+    getArchiveNotes(data){
+      return service.getMethod(`${baseUrl}notes/getArchiveNotesList`,data,headerConfig)
+    }
+
+    gettrashNotes(data){
+      return service.getMethod(`${baseUrl}notes/getTrashNotesList`,data,headerConfig)
+    }
+
+    
 }
 
 
