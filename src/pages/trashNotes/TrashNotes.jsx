@@ -14,7 +14,7 @@ export class TrashNotes extends Component {
       }
     
       componentDidMount() {
-        this.gettheNotes();
+        noteService.gettrashNotes();
         this.updateDiplayNote();
     }
     

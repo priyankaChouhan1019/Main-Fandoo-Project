@@ -33,7 +33,12 @@ import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import Archive from "../archive/Archive";
+import TrashNotes from "../trashNotes/TrashNotes";
 
+import {
+  Router, Switch ,Route
+} from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -138,6 +143,8 @@ export default function MiniDrawer() {
     setOpen(!open);
   };
 
+
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -151,24 +158,28 @@ export default function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
-
-          <Typography variant="h6" noWrap component="div">
-            Keep
-          </Typography>
-          <div class="search-bar" >
-            <input className="input-search" type="text" placeholder="Search"></input>
-          </div>
-          <div className="nav-right-icon">
-
-            <RefreshOutlinedIcon />
-            <ViewStreamOutlinedIcon />
-            <SettingsOutlinedIcon />
-            <AppsOutlinedIcon />
-            <AccountCircleOutlinedIcon />
-
-          </div>
+          {/* <div className="searchIcon"> */}
 
 
+
+            <Typography variant="h6" noWrap component="div">
+              Keep
+            </Typography> 
+            <div class="search-bar" >
+            {/* <SearchOutlinedIcon /> */}
+              <input className="input-search" type="text" placeholder="Search"></input>
+            </div>
+            <div className="nav-right-icon">
+
+              <RefreshOutlinedIcon />
+              <ViewStreamOutlinedIcon />
+              <SettingsOutlinedIcon />
+              <AppsOutlinedIcon />
+              <AccountCircleOutlinedIcon />
+
+            </div>
+
+          {/* </div> */}
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
@@ -178,7 +189,7 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           {iconlist.map((text, index) => (
-            <ListItem button key={text.icnText}>
+            <ListItem button key={text.icnText} >
               <ListItemIcon>
                 {text.icons}
               </ListItemIcon>
@@ -189,7 +200,17 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
+        {/* <Router>
+          <Switch>
+            <Route path="/" exact component={Notes} />
+            <Route path="/archive"  component={Archive}/>
+            <Route path="/trashNotes"  component={TrashNotes}/>
+          </Switch>
+        </Router> */}
+        {/* <Route path='/notes' component={Notes} /> */}
         <Notes />
+        {/* <Archive/> */}
+        {/* <TrashNotes/>*/}
         <Typography paragraph></Typography>
         <Typography paragraph></Typography>
       </Box>

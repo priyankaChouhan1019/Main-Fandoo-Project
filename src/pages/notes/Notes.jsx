@@ -4,6 +4,8 @@ import '../notes/Notes.scss'
 import NoteService from '../../service/notesservice'
 import Displaynew from '../../components/displayNote/Displaynew'
 
+const udateNotesCOntext=React.createContext();
+
 
 const noteService = new NoteService();
 export class Notes extends Component {
@@ -18,7 +20,7 @@ export class Notes extends Component {
 
   componentDidMount() {
     this.gettheNotes();
-    this.updateDiplayNote();
+    // this.updateDiplayNote();
 }
 
 gettheNotes = () => { //for refresh display
@@ -36,25 +38,19 @@ gettheNotes = () => { //for refresh display
         })
 }
 
-updateDiplayNote=()=>{
-  noteService.getNote()
-  .then(res =>{
-      this.setState({
-          noteArr:res.data.data.data
-      })
-      console.log(res)
-  })
-  .catch(err =>{
-      console.log(err)
-  })
-}
   render() {
+
     return (
       <div  className="note-box">
 
+{/* <udateNotesCOntext.Provider value={this.gettheNotes}>
+          <TakeNote />
+         <Displaynew notesArray ={this.state.noteArr} />
+  </udateNotesCOntext.Provider> */}
+
 
          <TakeNote refreshDispNote ={this.gettheNotes} />
-         <Displaynew notesArray ={this.state.noteArr} updateDiplayNote={this.updateDiplayNote}/>
+         <Displaynew notesArray ={this.state.noteArr} refreshDispNote={this.gettheNotes}/> 
       </div>
     )
   }

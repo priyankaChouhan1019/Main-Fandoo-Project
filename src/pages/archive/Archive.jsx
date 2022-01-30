@@ -14,10 +14,11 @@ export class Archive extends Component {
       }
     
       componentDidMount() {
-        this.gettheNotes();
-        this.updateDiplayNote();
+      
+       this.gettheNotes();
+       this.updateDiplayNote();
     }
-    
+
     gettheNotes = () => { //for refresh display
         noteService.getArchiveNotes()
             .then((res) => {

@@ -39,8 +39,11 @@ $icon1Color : #777777;
     #search-icon{
     align-self: center;
     }
-}
 
+}
+.searchIcon{
+    display: flex;
+}
 
 .nav-right-icon{
      width: 15%;
