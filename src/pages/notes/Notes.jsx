@@ -24,7 +24,6 @@ export class Notes extends Component {
 
   componentDidMount() {
     this.gettheNotes();
-    // this.updateDiplayNote();
 }
 
 
@@ -40,7 +39,6 @@ gettheNotes = () => { //for refresh display
                 noteArr:filterData
 
             })
-           // console.log(this.state.noteArr)
         })
         .catch((err) => {
 

@@ -46,6 +46,9 @@ class NoteService {
       return service.getMethod(`${baseUrl}notes/getTrashNotesList`,data,headerConfig)
     }
 
+    getUpdatedNote(data){
+      return service.postMethod(`${baseUrl}notes/updateNotes`,data,headerConfig)
+    }
     
 }
 

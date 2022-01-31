@@ -64,10 +64,8 @@ export class DisplayNote extends Component {
             open: false,
             title: this.props.notesArray.title,
             description: this.props.notesArray.description,
-            // color: this.props.color,
-            color:'#ffffff',
-          //  id: ' '
-          id:this.props.notesArray.id,
+            id:this.props.notesArray.id,
+            color:'#ffffff', 
           archive:false,
           delete:false
 
@@ -108,11 +106,8 @@ export class DisplayNote extends Component {
         formData.append("title", this.state.title)
         formData.append("description", this.state.description)
         formData.append("noteId", this.state.id)
-        // formData.append("color", this.state.color)
-       // formData.append("isArchived", this.state.archive)
 
-
-        noteService.getNote(formData)
+        noteService.getUpdatedNote(formData)
             .then(res => {
                 // refreshDisplaynote
                 this.props.refreshDispNote();
@@ -131,7 +126,7 @@ export class DisplayNote extends Component {
 
     }
 
-    howerTitleDesc = (e) => {
+    fetchTitleDesc = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -150,7 +145,8 @@ export class DisplayNote extends Component {
                             {item.description}
                         </div>
                         <div className="icons-list">
-                            <Icons mode="update" noteId={item.id} changeColor={this.changeColor} refreshDispNote={this.props.refreshDispNote}
+                            <Icons mode="update" noteId={item.id} changeColor={this.changeColor} 
+                            refreshDispNote={this.props.refreshDispNote}
                             changeArchive={this.changeArchive} changeDelete={this.changeDelete} />
                         </div>
 
@@ -163,12 +159,12 @@ export class DisplayNote extends Component {
                         <div style={{backgroundColor: this.state.color}}>
                         <BootstrapDialogTitle id="customized-dialog-title" onClose={this.handleClose} >
                             <div className='hower-title'>
-                                <input type="text" style={{ border: "none", outline: "none",backgroundColor: this.state.color }} value={this.state.title} name="title" onChange={(e) => this.howerTitleDesc(e)} />
+                                <input type="text" style={{ border: "none", outline: "none",backgroundColor: this.state.color }} value={this.state.title} name="title" onChange={(e) => this.fetchTitleDesc(e)} />
                             </div>
                         </BootstrapDialogTitle>
                         <DialogContent>
                             <div className='hower-desp'>
-                                <input type="text" style={{ border: "none", outline: "none",backgroundColor: this.state.color}} value={this.state.description} name="description" onChange={(e) => this.howerTitleDesc(e)} />
+                                <input type="text" style={{ border: "none", outline: "none",backgroundColor: this.state.color}} value={this.state.description} name="description" onChange={(e) => this.fetchTitleDesc(e)} />
                             </div>
                         </DialogContent>
                         <DialogContent className="close-Icon" >
