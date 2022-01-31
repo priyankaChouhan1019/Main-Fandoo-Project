@@ -66,6 +66,8 @@ export class Icons extends Component {
     service.changeColor(data)
     .then(res =>{
         console.log(res)
+        this.props.changeColor(storeclr)
+        this.props.refreshDispNote()
         
     })
     .catch(err =>{
@@ -82,13 +84,11 @@ export class Icons extends Component {
   }
 
   checkArchive = () => {
-    // this.props.archivebtn(true)
 
         if(this.mode === "create"){
         this.props.archivebtn(true)
         }
         else{
-            console.log("in else")
             // api for update-part
             let data ={
                 "noteIdList":[this.props.noteId],
@@ -97,6 +97,8 @@ export class Icons extends Component {
             service.archiveChange(data)
             .then(res =>{
                 console.log(res)
+                this.props.refreshDispNote()
+                
             })
             .catch(err =>{
                 console.log( "here is error" + err)
@@ -105,15 +107,15 @@ export class Icons extends Component {
   }
 
   handleDelete =() =>{
-    console.log("Delete")
-        // delete-data
+         // delete-data
         let data ={
             "noteIdList":[this.props.noteId],
-            "isDeleted": false
+            "isDeleted": true
         }
         service.deleteNote(data)
         .then(res =>{
             console.log(res)
+            this.props.refreshDispNote()
         })
         .catch(err =>{
             console.log( "Error" + err)
@@ -135,8 +137,7 @@ handleDeleteClose= () => {
       <div className='icons-list'>
         <AddAlertOutlinedIcon />
         <PersonAddAltOutlinedIcon />
-        <div>
-          {/* //oncick={this.color('#ffffff)} */}
+        <div   >
           <ColorLensOutlinedIcon onClick={(e) => this.colorOpen(e)}/>
           <Popover
             id="simple-menu"

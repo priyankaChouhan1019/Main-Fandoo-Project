@@ -4,10 +4,14 @@ import '../notes/Notes.scss'
 import NoteService from '../../service/notesservice'
 import Displaynew from '../../components/displayNote/Displaynew'
 
-const udateNotesCOntext=React.createContext();
 
+// const updateNotesCOntext = React.createContext()
+
+// const contexctProvider =  updateNotesCOntext.Provider
+// const contextConsumer = updateNotesCOntext.Consumer
 
 const noteService = new NoteService();
+
 export class Notes extends Component {
 
   constructor(props){
@@ -23,15 +27,20 @@ export class Notes extends Component {
     // this.updateDiplayNote();
 }
 
+
 gettheNotes = () => { //for refresh display
     noteService.getNote()
         .then((res) => {
           console.log(res)
+          let filterData= res.data.data.data.filter(data=>data.isArchived !==true && data.isDeleted !==true)
+          //ARR.filter(data => data.state == "New York" && count === 2);
           //updateing notes
             this.setState({
-                noteArr: res.data.data.data
+                // noteArr: res.data.data.data
+                noteArr:filterData
+
             })
-            console.log(this.state.noteArr)
+           // console.log(this.state.noteArr)
         })
         .catch((err) => {
 
@@ -43,10 +52,10 @@ gettheNotes = () => { //for refresh display
     return (
       <div  className="note-box">
 
-{/* <udateNotesCOntext.Provider value={this.gettheNotes}>
+{/* <contexctProvider value={this.gettheNotes}>
           <TakeNote />
          <Displaynew notesArray ={this.state.noteArr} />
-  </udateNotesCOntext.Provider> */}
+  </contexctProvider> */}
 
 
          <TakeNote refreshDispNote ={this.gettheNotes} />
