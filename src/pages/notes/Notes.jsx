@@ -32,7 +32,6 @@ gettheNotes = () => { //for refresh display
         .then((res) => {
           console.log(res)
           let filterData= res.data.data.data.filter(data=>data.isArchived !==true && data.isDeleted !==true)
-          //ARR.filter(data => data.state == "New York" && count === 2);
           //updateing notes
             this.setState({
                 // noteArr: res.data.data.data

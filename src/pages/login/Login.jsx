@@ -32,6 +32,8 @@ export class Login extends Component {
 
     }
 
+    
+
     next = () => {
         var validated = this.validation();
         if (!validated) {
@@ -48,7 +50,11 @@ export class Login extends Component {
                 .then(res => {
                     console.log(res)
                     localStorage.setItem('token', res.data.id)
-                    console.log(localStorage.setItem('token', res.data.id))
+                    localStorage.setItem("firstName",res.data.firstName);
+                    localStorage.setItem("lastName",res.data.lastName);
+                    localStorage.setItem("email",res.data.email);
+        window.location.href="http://localhost:4200/dashboard";
+                   // console.log(localStorage.setItem('token', res.data.id))
                 })
                 .catch(err => {
                     console.log(err)

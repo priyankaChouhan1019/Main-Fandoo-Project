@@ -64,10 +64,10 @@ export class DisplayNote extends Component {
             open: false,
             title: this.props.notesArray.title,
             description: this.props.notesArray.description,
-            id:this.props.notesArray.id,
-            color:'#ffffff', 
-          archive:false,
-          delete:false
+            id: this.props.notesArray.id,
+            color: '#ffffff',
+            archive: false,
+            delete: false
 
         };
     }
@@ -81,9 +81,9 @@ export class DisplayNote extends Component {
         })
     }
 
-    changeColor=(value)=>{
+    changeColor = (value) => {
         this.setState({
-            color:value
+            color: value
         })
     }
 
@@ -96,18 +96,18 @@ export class DisplayNote extends Component {
     changeDelete = (val) => {
         this.setState({
             handleDelete: val
-            
+
         })
     }
 
     handleClose = () => {
-        
+
         const formData = new FormData();
         formData.append("title", this.state.title)
         formData.append("description", this.state.description)
         formData.append("noteId", this.state.id)
 
-        noteService.getUpdatedNote(formData)
+        noteService.UpdatedDialogNote(formData)
             .then(res => {
                 // refreshDisplaynote
                 this.props.refreshDispNote();
@@ -115,9 +115,7 @@ export class DisplayNote extends Component {
                     open: false,
                     title: '',
                     description: '',
-                    id:' ',
-                    // color: '#ffffff',
-                    //  archive: true
+                    id: ' ',
                 })
             })
             .catch(err => {
@@ -134,7 +132,6 @@ export class DisplayNote extends Component {
 
     render() {
 
-
         return (
 
             <div className="disp-container">
@@ -145,42 +142,42 @@ export class DisplayNote extends Component {
                             {item.description}
                         </div>
                         <div className="icons-list">
-                            <Icons mode="update" noteId={item.id} changeColor={this.changeColor} 
-                            refreshDispNote={this.props.refreshDispNote}
-                            changeArchive={this.changeArchive} changeDelete={this.changeDelete} />
+                            <Icons mode="update" noteId={item.id} changeColor={this.changeColor}
+                                refreshDispNote={this.props.refreshDispNote}
+                                changeArchive={this.changeArchive} changeDelete={this.changeDelete} />
                         </div>
-
                     </div>
                 ))
                 }
 
-                <BootstrapDialog onClose={this.handleClose} aria-labelledby="customized-dialog-title" open={this.state.open}>
+               
+                
+                <BootstrapDialog  className="dialog" onClose={this.handleClose} aria-labelledby="customized-dialog-title" open={this.state.open}>
                     <div style={{ width: "100%", overflow: "hidden" }}>
-                        <div style={{backgroundColor: this.state.color}}>
-                        <BootstrapDialogTitle id="customized-dialog-title" onClose={this.handleClose} >
-                            <div className='hower-title'>
-                                <input type="text" style={{ border: "none", outline: "none",backgroundColor: this.state.color }} value={this.state.title} name="title" onChange={(e) => this.fetchTitleDesc(e)} />
-                            </div>
-                        </BootstrapDialogTitle>
-                        <DialogContent>
-                            <div className='hower-desp'>
-                                <input type="text" style={{ border: "none", outline: "none",backgroundColor: this.state.color}} value={this.state.description} name="description" onChange={(e) => this.fetchTitleDesc(e)} />
-                            </div>
-                        </DialogContent>
-                        <DialogContent className="close-Icon" >
+                        <div style={{ backgroundColor: this.state.color }}>
+                            <BootstrapDialogTitle id="customized-dialog-title" onClose={this.handleClose} >
+                                <div className='hower-title'>
+                                    <input type="text" style={{ border: "none", outline: "none", backgroundColor: this.state.color }} value={this.state.title} name="title" onChange={(e) => this.fetchTitleDesc(e)} />
+                                </div>
+                            </BootstrapDialogTitle>
+                            <DialogContent>
+                                <div className='hower-desp'>
+                                    <input type="text" style={{ border: "none", outline: "none", backgroundColor: this.state.color }} value={this.state.description} name="description" onChange={(e) => this.fetchTitleDesc(e)} />
+                                </div>
+                            </DialogContent>
 
-                            <Icons mode="update" noteId={this.state.id} changeColor={this.changeColor} refreshDispNote={this.props.refreshDispNote}  changeArchive={this.changeArchive} changeDelete={this.changeDelete}/>
-                            <Button autoFocus onClick={(title, description) => this.handleClose(title, description)} changeColor={this.changeColor}> Close </Button>
+                            <DialogContent className="close-Icon" >
 
-                        </DialogContent>
+                                <Icons className="dialog-icon" mode="update" noteId={this.state.id} changeColor={this.changeColor} refreshDispNote={this.props.refreshDispNote} changeArchive={this.changeArchive} changeDelete={this.changeDelete} />
+                                <Button id="dialog-button"autoFocus onClick={(title, description) => this.handleClose(title, description)} changeColor={this.changeColor}> Close </Button>
+
+                            </DialogContent>
                         </div>
                     </div>
 
                 </BootstrapDialog>
 
-
             </div>
-
 
         )
     }

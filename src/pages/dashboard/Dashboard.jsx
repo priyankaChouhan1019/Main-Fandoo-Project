@@ -35,10 +35,13 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import Archive from "../archive/Archive";
 import TrashNotes from "../trashNotes/TrashNotes";
+import Profile from "../profile/Profile"
+
 
 import {
   Router, Switch ,Route
 } from 'react-router-dom';
+import { Popover } from "@material-ui/core";
 
 const drawerWidth = 240;
 
@@ -96,10 +99,11 @@ const AppBar = styled(MuiAppBar, {
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open"
 })(({ theme, open }) => ({
-  width: drawerWidth,
-  flexShrink: 0,
+  // width: drawerWidth,
+  flexShrink: 10,
   whiteSpace: "nowrap",
   boxSizing: "border-box",
+  
   ...(open && {
     ...openedMixin(theme),
     "& .MuiDrawer-paper": openedMixin(theme)
@@ -179,8 +183,14 @@ export default function MiniDrawer() {
               <ViewStreamOutlinedIcon />
               <SettingsOutlinedIcon />
               <AppsOutlinedIcon />
-              <AccountCircleOutlinedIcon />
+              {/* <AccountCircleOutlinedIcon /> */}
 
+            
+                <Profile/>
+           
+        
+           
+           
             </div>
 
           {/* </div> */}
@@ -190,7 +200,7 @@ export default function MiniDrawer() {
         <DrawerHeader>
 
         </DrawerHeader>
-        <Divider />
+        {/* <Divider /> */}
         <List>
           {iconlist.map((text, index) => (
             <ListItem button key={text.icnText} >
@@ -202,7 +212,7 @@ export default function MiniDrawer() {
           ))}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }} style={{  zIndex: +1}}>
         <DrawerHeader />
         {/* <Router>
           <Switch>

@@ -46,7 +46,7 @@ class NoteService {
       return service.getMethod(`${baseUrl}notes/getTrashNotesList`,data,headerConfig)
     }
 
-    getUpdatedNote(data){
+    UpdatedDialogNote(data){
       return service.postMethod(`${baseUrl}notes/updateNotes`,data,headerConfig)
     }
     
