@@ -152,8 +152,8 @@ export class DisplayNote extends Component {
 
                
                 
-                <BootstrapDialog  className="dialog" onClose={this.handleClose} aria-labelledby="customized-dialog-title" open={this.state.open}>
-                    <div style={{ width: "100%", overflow: "hidden" }}>
+                <BootstrapDialog   onClose={this.handleClose} aria-labelledby="customized-dialog-title" open={this.state.open}>
+                    <div className="dialog" style={{ width: "100%", overflow: "hidden" }}>
                         <div style={{ backgroundColor: this.state.color }}>
                             <BootstrapDialogTitle id="customized-dialog-title" onClose={this.handleClose} >
                                 <div className='hower-title'>

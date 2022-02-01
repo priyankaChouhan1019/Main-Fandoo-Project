@@ -49,11 +49,13 @@ export class Login extends Component {
             service.signin(data)
                 .then(res => {
                     console.log(res)
+                  
                     localStorage.setItem('token', res.data.id)
                     localStorage.setItem("firstName",res.data.firstName);
                     localStorage.setItem("lastName",res.data.lastName);
                     localStorage.setItem("email",res.data.email);
-        window.location.href="http://localhost:4200/dashboard";
+
+                   window.location.href="http://localhost:4200/Dashboard";
                    // console.log(localStorage.setItem('token', res.data.id))
                 })
                 .catch(err => {

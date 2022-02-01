@@ -10,6 +10,11 @@ export default function PopoverPopupState() {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
+//   const removeToken = (userToken) => {
+//     localStorage.removeItem("token");
+//     setToken(null);
+// };
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -43,8 +48,9 @@ export default function PopoverPopupState() {
 
               <div className="profile-container">
                 <p> {localStorage.getItem("firstName")}</p>
-                <p> priyachouhan1019@gmail.com</p>
+                <p> {localStorage.getItem("email")}</p>
                 <div className="profile-button">
+                  {/* <button onClick={removeToken}>signout</button> */}
                   <button>signout</button>
                 </div>
               </div>
