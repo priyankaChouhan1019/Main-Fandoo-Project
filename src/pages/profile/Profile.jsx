@@ -6,14 +6,19 @@ import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import UserService from "../../service/userservice";
 import '../profile/Profile.scss'
+import {Link } from "react-router-dom";
+
 export default function PopoverPopupState() {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-//   const removeToken = (userToken) => {
-//     localStorage.removeItem("token");
-//     setToken(null);
-// };
+  const removeToken = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem("email")
+    localStorage.removeItem("firstName")
+    localStorage.removeItem("lastName")
+    // setToken(null);
+};
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -29,7 +34,7 @@ export default function PopoverPopupState() {
     <PopupState variant="popover" popupId="demo-popup-popover">
       {(popupState) => (
         <div>
-          <Button variant="contained" {...bindTrigger(popupState)}>
+          <Button{...bindTrigger(popupState)}>
           <AccountCircleOutlinedIcon />
           </Button>
           <Popover
@@ -47,11 +52,12 @@ export default function PopoverPopupState() {
             <div >
 
               <div className="profile-container">
-                <p> {localStorage.getItem("firstName")}</p>
+                <p> {localStorage.getItem("firstName")}{' '} {localStorage.getItem("lastName")}</p>
                 <p> {localStorage.getItem("email")}</p>
                 <div className="profile-button">
-                  {/* <button onClick={removeToken}>signout</button> */}
-                  <button>signout</button>
+                <Link to="/">
+                  <button onClick={removeToken}>signout</button></Link>
+                  {/* <button>signout</button> */}
                 </div>
               </div>
             </div>

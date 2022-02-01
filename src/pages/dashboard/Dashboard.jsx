@@ -184,13 +184,7 @@ export default function MiniDrawer() {
               <SettingsOutlinedIcon />
               <AppsOutlinedIcon />
               {/* <AccountCircleOutlinedIcon /> */}
-
-            
-                <Profile/>
-           
-        
-           
-           
+                <Profile/>     
             </div>
 
           {/* </div> */}
