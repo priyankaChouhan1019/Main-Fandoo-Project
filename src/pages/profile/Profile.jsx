@@ -34,7 +34,7 @@ export default function PopoverPopupState() {
     <PopupState variant="popover" popupId="demo-popup-popover">
       {(popupState) => (
         <div>
-          <Button{...bindTrigger(popupState)}>
+          <Button {...bindTrigger(popupState)}>
           <AccountCircleOutlinedIcon />
           </Button>
           <Popover

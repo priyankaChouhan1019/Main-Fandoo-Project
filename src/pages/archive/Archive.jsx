@@ -16,18 +16,17 @@ export class Archive extends Component {
       componentDidMount() {
       
        this.gettheNotes();
-       this.updateDiplayNote();
+      //  this.updateDiplayNote();
     }
 
     gettheNotes = () => { //for refresh display
         noteService.getArchiveNotes()
             .then((res) => {
-              console.log(res)
               //updateing notes
                 this.setState({
                     noteArr: res.data.data.data
                 })
-                console.log(this.state.noteArr)
+               
             })
             .catch((err) => {
     
@@ -36,7 +35,7 @@ export class Archive extends Component {
   render() {
     return (
       <div>
-        <Displaynew notesArray ={this.state.noteArr} updateDiplayNote={this.updateDiplayNote}/>
+        <Displaynew notesArray ={this.state.noteArr} updateDiplayNote={this.gettheNotes}/>
       </div>
     )
   }

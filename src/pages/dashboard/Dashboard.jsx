@@ -3,6 +3,10 @@ import { styled, useTheme } from "@mui/material/styles";
 import '../dashboard/Dashboard.scss'
 import TakeNote from "../../components/takeNote/TakeNote";
 import Notes from "../notes/Notes";
+import Archive from "../archive/Archive";
+import TrashNotes from "../trashNotes/TrashNotes";
+import Profile from "../profile/Profile"
+import { useHistory } from "react-router";
 
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
@@ -33,9 +37,7 @@ import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import Archive from "../archive/Archive";
-import TrashNotes from "../trashNotes/TrashNotes";
-import Profile from "../profile/Profile"
+
 
 
 import {
@@ -116,6 +118,7 @@ const Drawer = styled(MuiDrawer, {
 
 export default function MiniDrawer() {
 
+  const history = useHistory();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -150,6 +153,23 @@ export default function MiniDrawer() {
   const handleDrawerOpen = () => {
     setOpen(!open);
   };
+
+  const iconClick = (text) => {
+    if (text.icnText == "Notes") {
+
+      history.push("/")
+    }
+    else if (text.icnText == "Archive") {
+  
+      history.push("/archive")
+    }
+    else if (text.icnText == "Bin") {
+      history.push("/trash")
+    }
+    else {
+      console.log("page not found")
+    }
+  }
 
 
 
@@ -197,7 +217,7 @@ export default function MiniDrawer() {
         {/* <Divider /> */}
         <List>
           {iconlist.map((text, index) => (
-            <ListItem button key={text.icnText} >
+            <ListItem button key={text.icnText} onClick={() => iconClick(text)}>
               <ListItemIcon>
                 {text.icons}
               </ListItemIcon>
@@ -208,18 +228,18 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }} style={{  zIndex: +1}}>
         <DrawerHeader />
-        {/* <Router>
+        <Typography paragraph>
           <Switch>
             <Route path="/" exact component={Notes} />
             <Route path="/archive"  component={Archive}/>
-            <Route path="/trashNotes"  component={TrashNotes}/>
+            <Route path="/trash"  component={TrashNotes}/>
           </Switch>
-        </Router> */}
+        
         {/* <Route path='/notes' component={Notes} /> */}
-        <Notes />
+        {/* <Notes /> */}
         {/* <Archive/> */}
         {/* <TrashNotes/>*/}
-        <Typography paragraph></Typography>
+     </Typography>
         <Typography paragraph></Typography>
       </Box>
     </Box>

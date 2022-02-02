@@ -38,12 +38,12 @@ class NoteService {
       return service.postMethod(`${baseUrl}notes/trashNotes`,data,headerConfig)
     }
 
-    getArchiveNotes(data){
-      return service.getMethod(`${baseUrl}notes/getArchiveNotesList`,data,headerConfig)
+    getArchiveNotes(){
+      return service.getMethod(`${baseUrl}notes/getArchiveNotesList`,headerConfig)
     }
 
-    gettrashNotes(data){
-      return service.getMethod(`${baseUrl}notes/getTrashNotesList`,data,headerConfig)
+    gettrashNotes(){
+      return service.getMethod(`${baseUrl}notes/getTrashNotesList`,headerConfig)
     }
 
     UpdatedDialogNote(data){

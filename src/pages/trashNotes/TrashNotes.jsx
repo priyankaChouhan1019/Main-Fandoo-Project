@@ -14,8 +14,9 @@ export class TrashNotes extends Component {
       }
     
       componentDidMount() {
-        noteService.gettrashNotes();
-        this.updateDiplayNote();
+        this.gettheNotes();
+        // noteService.gettrashNotes();
+        // this.updateDiplayNote();
     }
     
     gettheNotes = () => { //for refresh display
@@ -26,7 +27,6 @@ export class TrashNotes extends Component {
                 this.setState({
                     noteArr: res.data.data.data
                 })
-                console.log(this.state.noteArr)
             })
             .catch((err) => {
     
@@ -35,7 +35,7 @@ export class TrashNotes extends Component {
   render() {
     return (
       <div>
-          <Displaynew notesArray ={this.state.noteArr} updateDiplayNote={this.updateDiplayNote}/>       
+          <Displaynew notesArray ={this.state.noteArr} updateDiplayNote={this.gettheNotes}/>       
       </div>
     )
   }
